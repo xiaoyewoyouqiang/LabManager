@@ -219,10 +219,18 @@ public class LaboratoryAction extends ActionSupport implements ModelDriven<Labor
      * @return
      */
     public void updateSh() throws IOException {
-        user.setIsSh(1);
-        userService.updates(user);
+    	laboratory.setIsSh(1);
+    	laboratory.setUser(UserUtils.getUser());
+    	LaboratoryLog laboratoryLog = new LaboratoryLog();
+        laboratoryLog.setIsSh(1);
+        laboratoryLog.setLaboratory(laboratory);
+        laboratoryLog.setTime(new Date());
+        laboratoryLog.setUser(UserUtils.getUser());
+        laboratoryLogService.save(laboratoryLog);
+        laboratory.setLaboratoryLogId(laboratoryLog.getId());
+        laboratoryService.updates(laboratory);
         map.put("flag", true);
-        map.put("url", "user_list.do");
+        map.put("url", "laboratory_list2.do");
         JsonUtils.toJson(map);
     }
     

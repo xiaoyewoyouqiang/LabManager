@@ -23,6 +23,8 @@ public class Laboratory implements Serializable {
     private Integer isDelete;
     //是否审核（0未预约 1预约）
     private Integer isYy;
+    //是否审核（0未审核 1审核）
+    private Integer isSh;
     //预约人
     private User user;
     //预约时间
@@ -86,6 +88,16 @@ public class Laboratory implements Serializable {
     public void setIsYy(Integer isYy) {
         this.isYy = isYy;
     }
+    
+    @Column(name="isSh", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
+    public Integer getIsSh() {
+        return isSh;
+    }
+
+    public void setIsh(Integer isSh) {
+        this.isSh = isSh;
+    }
+    
     @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="user_id")
     public User getUser() {

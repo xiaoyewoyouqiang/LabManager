@@ -81,6 +81,8 @@
                         <th width="120">是否预约</th>
                         <th width="120">预约人</th>
                         <th width="250">操作</th>
+                        <th>是否审核</th>
+                        <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -100,6 +102,17 @@
                           <a onClick="yy(${c.id})"  href="javascript:;" title="预约"  class="btn btn-xs btn-success">预约</a>
                                 </c:if>
                                     <a onClick="qx(${c.id})"  href="javascript:;" title="取消预约"  class="btn btn-xs btn-success">取消预约</a>
+                        </td>
+                        <td>
+                            <c:if test="${c.isSh == 0}"><span style="color: red">未审核</span></c:if>
+                            <c:if test="${c.isSh == 1}"><span style="color: blue">已审核</span></c:if>
+                        </td>
+                        <td>
+                            <c:if test="${c.isSh == 0}">
+                                <a title="审核" onclick="sh(${c.id})" href="javascript:;"
+                                   class="btn btn-xs btn-info" style="background-color: #00B83F"><i
+                                        class="fa fa-book"></i></a>
+                            </c:if>
                         </td>
                     </tr>
                           </c:forEach>
@@ -158,7 +171,29 @@
     function yy(id) {
         updateId("laboratory_yy.do", "预约成功", id);
     }
-
+    
+    function sh(id) {
+        $.ajax({
+            cache: false,
+            type: "post",
+            url: "laboratory_updateSh.do",
+            data: {id: id},// 你的formid
+            async: false,
+            success: function (data) {
+                if (data.flag) {
+                    layer.msg('审核成功', {
+                        icon: 1,
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function () {
+                        var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                        parent.layer.close(index); //再执行关闭
+                        window.location.href = data.url;
+                    });
+                }
+            }
+        });
+    }
+    
     function qx(id) {
         $.ajax({
             cache: false,
