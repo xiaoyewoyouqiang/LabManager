@@ -97,7 +97,7 @@
                         <td class="td-manage">
                             <%--<a onClick="member_stop(this,'10001')"  href="javascript:;" title="停用"  class="btn btn-xs btn-success"><i class="icon-ok bigger-120"></i></a>--%>
                                 <c:if test="${c.isFw == 0}">
-                            <a title="开始使用" onclick="sh(${c.id})" href="javascript:;"  class="btn btn-xs btn-warning" ><i class="icon-edit bigger-120"></i></a>
+                            <a title="开始使用" onclick="sy(${c.id})" href="javascript:;"  class="btn btn-xs btn-warning" ><i class="icon-edit bigger-120"></i></a>
                                 </c:if>
                                 <%--<a href="javascript:;" id="member_add" class="btn btn-warning"><i class="icon-plus"></i>添加实验室</a>--%>
 
@@ -229,8 +229,8 @@
         });
     }
 
-    function sh(id) {
-        updateId("equipment_updateSh.do", "使用成功", id);
+    function sy(id) {
+        updateId("equipment_updateSy.do", "使用成功", id);
     }
 
     /*用户-删除*/

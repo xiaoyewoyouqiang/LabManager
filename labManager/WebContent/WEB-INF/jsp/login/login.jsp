@@ -100,7 +100,7 @@
 				<input type="password" name="user.pass" value="123456" style="height:30px" placeholder="请输入密码..." id="密码"/>
 			</div>
 			
-			<button type="button" id="login_btn">登录</button>
+			<button type="button" id="login_btn">登<span style="width:20px;"></span>录</button>
 		</form>
 	</div>
 </div>

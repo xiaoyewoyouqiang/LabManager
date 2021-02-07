@@ -37,17 +37,16 @@ public class LaboratoryLog implements Serializable {
     public void setIsYy(Integer isYy) {
         this.isYy = isYy;
     }
-    
     @Column(name="isSh", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
     public Integer getIsSh() {
-        return isSh;
-    }
+		return isSh;
+	}
 
-    public void setIsSh(Integer isSh) {
-        this.isSh = isSh;
-    }
-    
-    @ManyToOne(fetch= FetchType.LAZY)
+	public void setIsSh(Integer isSh) {
+		this.isSh = isSh;
+	}
+
+	@ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="user_id")
     public User getUser() {
         return user;

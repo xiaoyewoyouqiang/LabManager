@@ -220,8 +220,8 @@ public class LaboratoryAction extends ActionSupport implements ModelDriven<Labor
      */
     public void updateSh() throws IOException {
     	laboratory.setIsSh(1);
-    	laboratory.setUser(UserUtils.getUser());
-    	LaboratoryLog laboratoryLog = new LaboratoryLog();
+        laboratory.setUser(UserUtils.getUser());
+        LaboratoryLog laboratoryLog = new LaboratoryLog();
         laboratoryLog.setIsSh(1);
         laboratoryLog.setLaboratory(laboratory);
         laboratoryLog.setTime(new Date());

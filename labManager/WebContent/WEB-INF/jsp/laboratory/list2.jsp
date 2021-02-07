@@ -9,6 +9,7 @@
     <link href="${ctx}/resource/assets/css/codemirror.css" rel="stylesheet">
     <link rel="stylesheet" href="${ctx}/resource/assets/css/ace.min.css" />
     <link rel="stylesheet" href="${ctx}/resource/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="${ctx}/resource/font/css/font-awesome.min.css"/>
     <!--[if IE 7]>
     <link rel="stylesheet" href="${ctx}/resource/assets/css/font-awesome-ie7.min.css" />
     <![endif]-->
@@ -81,8 +82,10 @@
                         <th width="120">是否预约</th>
                         <th width="120">预约人</th>
                         <th width="250">操作</th>
-                        <th>是否审核</th>
-                        <th>操作</th>
+                        <c:if test="${user.role.id == 1}">
+	                        <th>是否审核</th>
+	                        <th>操作</th>
+                        </c:if>
                     </tr>
                     </thead>
                     <tbody>
@@ -103,17 +106,19 @@
                                 </c:if>
                                     <a onClick="qx(${c.id})"  href="javascript:;" title="取消预约"  class="btn btn-xs btn-success">取消预约</a>
                         </td>
-                        <td>
-                            <c:if test="${c.isSh == 0}"><span style="color: red">未审核</span></c:if>
-                            <c:if test="${c.isSh == 1}"><span style="color: blue">已审核</span></c:if>
-                        </td>
-                        <td>
-                            <c:if test="${c.isSh == 0}">
-                                <a title="审核" onclick="sh(${c.id})" href="javascript:;"
-                                   class="btn btn-xs btn-info" style="background-color: #00B83F"><i
-                                        class="fa fa-book"></i></a>
-                            </c:if>
-                        </td>
+                        <c:if test="${user.role.id == 1}">
+	                        <td>
+	                            <c:if test="${c.isSh == 0}"><span style="color: red">未审核</span></c:if>
+	                            <c:if test="${c.isSh == 1}"><span style="color: blue">已审核</span></c:if>
+	                        </td>
+	                        <td>
+	                            <c:if test="${c.isSh == 0}">
+	                                <a title="审核" onclick="sh(${c.id})" href="javascript:;"
+	                                   class="btn btn-xs btn-info" style="background-color: #00B83F"><i
+	                                        class="fa fa-book"></i></a>
+	                            </c:if>
+	                        </td>
+                        </c:if>
                     </tr>
                           </c:forEach>
                     </tbody>
@@ -193,7 +198,7 @@
             }
         });
     }
-    
+
     function qx(id) {
         $.ajax({
             cache: false,

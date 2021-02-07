@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="${ctx}/resource/assets/css/font-awesome-ie7.min.css" />
     <link rel="stylesheet" href="${ctx}/resource/assets/css/ace-ie.min.css" />
     <link rel="stylesheet" href="${ctx}/resource/css/layer.css" />
+    <link rel="stylesheet" href="${ctx}/resource/font/css/font-awesome.min.css"/>
     <script src="${ctx}/resource/assets/js/jquery.min.js"></script>
     <script src="${ctx}/resource/assets/layer/layer.js" type="text/javascript" ></script>
     <script src="${ctx}/resource/assets/js/bootstrap.min.js"></script>
@@ -57,11 +58,14 @@
                     <thead>
                     <tr>
                         <th width="250">实验设备名称及型号</th>
-                        <th width="300">地点</th>
+                        <th width="200">地点</th>
                         <th width="200">实验图片信息</th>
                         <th width="200">是否借用</th>
                         <th width="250">操作</th>
-                        <th></th>
+                        <c:if test="${user.role.id == 1}">
+                        	<th>是否审核</th>
+                        	<th>操作</th>
+                        </c:if> 
                     </tr>
                     </thead>
                     <tbody>
@@ -96,8 +100,20 @@
                                 <c:if test="${c.isJy == 1}">
                                 <a onClick="qx(${c.id})"  href="javascript:;" title="取消预约"  class="btn btn-xs btn-success">归还</a>
                                 </c:if>
-                        </td>
-                            <td></td>
+                        	</td>
+                        	<c:if test="${user.role.id == 1}">
+                        		<td>
+                        			<c:if test="${c.isSh == 0}"><span style="color: red">未审核</span></c:if>
+                            		<c:if test="${c.isSh == 1}"><span style="color: blue">已审核</span></c:if>
+                        		</td>
+                        		<td>
+		                            <c:if test="${c.isSh == 0}">
+		                                <a title="审核" onclick="sh(${c.id})" href="javascript:;"
+		                                   class="btn btn-xs btn-info" style="background-color: #00B83F"><i
+		                                        class="fa fa-book"></i></a>
+		                            </c:if>
+		                        </td>
+                        	</c:if>
                     </tr>
                           </c:forEach>
                     </tbody>
@@ -173,6 +189,28 @@
                         time: 2000 //2秒关闭（如果不配置，默认是3秒）
                     }, function(){
                         shuaxin2();
+                        window.location.href = data.url;
+                    });
+                }
+            }
+        });
+    }
+    
+    function sh(id) {
+        $.ajax({
+            cache: false,
+            type: "post",
+            url: "equipment_updateSh.do",
+            data: {id: id},// 你的formid
+            async: false,
+            success: function (data) {
+                if (data.flag) {
+                    layer.msg('审核成功', {
+                        icon: 1,
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    }, function () {
+                        var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                        parent.layer.close(index); //再执行关闭
                         window.location.href = data.url;
                     });
                 }

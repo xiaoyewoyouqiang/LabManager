@@ -23,6 +23,8 @@ public class Equipment implements Serializable {
     private Laboratory laboratory;
     //0未删除，1已删除
     private Integer isDelete;
+    //是否审核（0未审核 1审核）
+    private Integer isSh;
     private Integer isFw;
     private String ht;
     private Date fwTime;
@@ -51,8 +53,16 @@ public class Equipment implements Serializable {
     public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
     }
+    @Column(name="isSh", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
+    public Integer getIsSh() {
+		return isSh;
+	}
 
-    public void setId(Integer id) {
+	public void setIsSh(Integer isSh) {
+		this.isSh = isSh;
+	}
+
+	public void setId(Integer id) {
         this.id = id;
     }
 

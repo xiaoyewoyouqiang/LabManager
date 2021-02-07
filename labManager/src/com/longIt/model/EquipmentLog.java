@@ -11,6 +11,8 @@ public class EquipmentLog implements Serializable {
     private Integer id;
     //是否借用（0未借用 1借用）
     private Integer isYy;
+  //是否审核（0未审核 1审核）
+    private Integer isSh;
     //借用人
     private User user;
     //借用时间
@@ -39,8 +41,16 @@ public class EquipmentLog implements Serializable {
     public void setIsYy(Integer isYy) {
         this.isYy = isYy;
     }
+    @Column(name="isSh", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
+    public Integer getIsSh() {
+		return isSh;
+	}
 
-    @ManyToOne(fetch= FetchType.LAZY)
+	public void setIsSh(Integer isSh) {
+		this.isSh = isSh;
+	}
+
+	@ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="user_id")
     public User getUser() {
         return user;

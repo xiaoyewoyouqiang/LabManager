@@ -176,7 +176,7 @@ public class EquipmentAction extends ActionSupport implements ModelDriven<Equipm
      *
      * @return
      */
-    public void updateSh() throws IOException {
+    public void updateSy() throws IOException {
         equipment.setFwTime(new Date());
         equipment.setIsFw(1);
         equipmentService.updates(equipment);
@@ -185,6 +185,26 @@ public class EquipmentAction extends ActionSupport implements ModelDriven<Equipm
         JsonUtils.toJson(map);
     }
 
+    /**
+     * 审核
+     * 
+     * 
+     */
+    public void updateSh() throws IOException{
+    	equipment.setIsSh(1);
+        equipment.setJyUser(UserUtils.getUser());
+        EquipmentLog log = new EquipmentLog();
+        log.setUser(UserUtils.getUser());
+        log.setTime(new Date());
+        log.setEquipment(equipment);
+        log.setIsSh(1);
+        equipmentLogService.save(log);
+        equipment.setJyId(log.getId());
+        equipmentService.updates(equipment);
+        map.put("flag", true);
+        map.put("url", "equipment_dataList3.do");
+        JsonUtils.toJson(map);
+    }
     /**
      * 借用list
      *
