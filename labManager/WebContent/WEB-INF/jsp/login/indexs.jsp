@@ -457,6 +457,26 @@
                         </ul>
                     </li>
     </c:if>
+    <c:if test="${role != 'admin'}">
+                    <li>
+                        <a href="#" class="dropdown-toggle"><i class="icon-list"></i><span
+                                class="menu-text"> 设备故障反馈  </span><b class="arrow icon-angle-down"></b></a>
+                        <ul class="submenu">
+                            <li class="home"><a href="javascript:void(0)" name="feedback_fb.do" title="设备故障反馈"
+                                                class="iframeurl"><i class="icon-double-angle-right"></i>设备故障反馈</a></li>
+                        </ul>
+                    </li>
+    </c:if>
+    <c:if test="${role == 'admin'}">
+                    <li>
+                        <a href="#" class="dropdown-toggle"><i class="icon-list"></i><span
+                                class="menu-text"> 设备故障反馈  </span><b class="arrow icon-angle-down"></b></a>
+                        <ul class="submenu">
+                            <li class="home"><a href="javascript:void(0)" name="feedback_fblist.do" title="设备故障反馈"
+                                                class="iframeurl"><i class="icon-double-angle-right"></i>设备故障反馈列表</a></li>
+                        </ul>
+                    </li>
+    </c:if>
                 </ul>
             </div>
             <script type="text/javascript">
