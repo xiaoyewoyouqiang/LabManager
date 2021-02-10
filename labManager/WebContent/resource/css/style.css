@@ -73,6 +73,13 @@ body
 	overflow: 
 	hidden;float:left
 }
+.skin-1 .pull-right .time{
+	background-color: #222a2d!important;
+	
+}
+.skin-1 .pull-right .time em{
+	color: #fff!important;
+}
 .Manager_style,
 .search_style{ position:relative; margin-top:20px; }
 #parentIframe,#parentIfour{ display:none;}
@@ -214,13 +221,9 @@ body
 .search_style .search_content li{ margin-right:20px; float:left; line-height:30px;}
 .search_style .search_content li .btn_search{
 	 height:32px; 
-    background: #2a8bcc!important;
-    background-image: -webkit-gradient(linear,left 0,left 100%,from(#3b98d6),to(#197ec1))!important;
-    background-image: -webkit-linear-gradient(top,#3b98d6,0%,#197ec1,100%)!important;
-    background-image: -moz-linear-gradient(top,#3b98d6 0,#197ec1 100%)!important;
-    background-image: linear-gradient(to bottom,#3b98d6 0,#197ec1 100%)!important;
+    background: #457B9D!important;
     background-repeat: repeat-x!important;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b98d6',endColorstr='#ff197ec1',GradientType=0)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#457B9D',endColorstr='#457B9D',GradientType=0)!important;
     line-height:32px;
 	border:0px;
 	width:60px;

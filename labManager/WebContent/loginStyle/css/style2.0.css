@@ -1,10 +1,12 @@
-ï»¿*{margin:0;padding:0}
+*{margin:0;padding:0}
 body{
-	font-family:'å¾®è½¯é›…é»‘','é»‘ä½“',serif,'å®‹ä½“';color:#4d6287;font-size:12px;
-	background:#191c2c;overflow:hidden}
-dd,div,dt,li,span{font-family:'å¾®è½¯é›…é»‘'}
+	font-family:'Î¢ÈíÑÅºÚ','ºÚÌå',serif,'ËÎÌå';color:#4d6287;font-size:12px;
+	background:#191c2c url('https://static.pwesports.cn/dota2static/file/73e42a44-4a35-4f19-afed-a90314360ffe.jpg');overflow:hidden;
+	background-size: cover;
+	
+	}
 li{list-style-type:none}
-a,a:active{text-decoration:none;font-family:'å¾®è½¯é›…é»‘';outline:0}
+a,a:active{text-decoration:none;font-family:'Î¢ÈíÑÅºÚ';outline:0}
 img{border:none}
 * html,* html body{
 	background-image:url(style/images/about:blank);
@@ -13,6 +15,25 @@ img{border:none}
 * html .btnlistpar{
 	position:absolute;bottom:auto;
 	top:expression(eval(document.documentElement.scrollTop))
+}
+.tyg-div-denglv{
+	top: 8%!important;
+}
+.title6{
+	position: fixed;
+	left: 20px;
+	top: 20px;
+}
+.tyg-div-form form button{
+	background-color: #337ab7!important;
+	border:none!important
+}
+.tyg-p a{
+	color: #fff;
+}
+#page1 .img3 {
+    top: 60%!important;
+    left: 56%!important;
 }
 body,html{_height:100%}
 .mar-t-0{margin-top:0!important}

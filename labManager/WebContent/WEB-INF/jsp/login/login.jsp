@@ -65,42 +65,39 @@
 </style>
 
 <body>
-<div class="tyg-div">
-	<ul>
-    	<li>让</li>
-    	<li><div style="margin-left:20px;">数</div></li>
-    	<li><div style="margin-left:40px;">据</div></li>
-    	<li><div style="margin-left:60px;">改</div></li>
-    	<li><div style="margin-left:80px;">变</div></li>
-    	<li><div style="margin-left:100px;">生</div></li>
-    	<li><div style="margin-left:120px;">活</div></li>
-    </ul>
-</div> 
+<div class="title6">
+<p><img style="display: inline-block;vertical-align: middle; height: 80px; margin: 0 20px;" src="${pageContext.request.contextPath}/resource/images/be76631b89592866c532412c9458699.png" /><b style="font-family: '幼圆';font-size: 38px;color: white; line-height: 100%; display: inline-block;vertical-align: middle; padding-top: 3px;"><span>机房管理系统<i style="display:block; font-size: 14px;">Computer-Labs Management System</i></span></b></p>
+</div>
 <div id="contPar" class="contPar">
+	
 	<div id="page1"  style="z-index:1;">
-		<div class="title0">实验室智能管理系统</div>
-		<div class="imgGroug">
-			<ul>
-				<img alt="" class="img0 png" src="${pageContext.request.contextPath}/loginStyle/img/page1_0.png">
-				<img alt="" class="img1 png" src="${pageContext.request.contextPath}/loginStyle/img/page1_1.png">
-				<img alt="" class="img2 png" src="${pageContext.request.contextPath}/loginStyle/img/page1_2.png">
-			</ul>
-		</div>
-		<img alt="" class="img3 png" src="${pageContext.request.contextPath}/loginStyle/img/page1_3.jpg">
+		<img alt="" class="img3 png" src="${pageContext.request.contextPath}/resource/images/e688f30adf4ebf77b779be0d5f31fcd.png" />
 	</div>
 </div>
 <div class="tyg-div-denglv">
-	<div class="tyg-div-form">
+	<div class="tyg-div-form" style="width: 320px;">
 		<form  id="login" action="${pageContext.request.contextPath}/login_index.do">
-			<h2>注册</h2><p class="tyg-p"><a href="javascript:add()">尚未注册  点击注册</a></p>
-			<div style="margin:5px 0px;">
-				<input type="text" name="user.name" value="admin" style="height:30px" placeholder="请输入账号..." id="用户名"/>
+			<h2 style="color: #fff;">用户登录</h2>
+			<p class="tyg-p"></p>
+			<div style="margin:5px 0px;     position: relative;">
+				<img style="    position: absolute;
+    left: 3px;
+    top: 33px;" src="https://static.pwesports.cn/dota2static/file/6738b81f-3d79-4a0b-b50c-4024e40d81f6.png" />
+				<input type="text" name="user.name" value="admin" style="height:30px;padding-left: 20px;" placeholder="请输入账号..." id="用户名"/>
 			</div>
-			<div style="margin:5px 0px;">
-				<input type="password" name="user.pass" value="123456" style="height:30px" placeholder="请输入密码..." id="密码"/>
+			<div style="margin:5px 0px;    position: relative;">
+			<img style="    position: absolute;
+    left: 3px;
+    top: 8px;" src="https://static.pwesports.cn/dota2static/file/6c187a00-624e-40fa-8bfd-d5315e8d239e.png" />
+				<input  type="password" name="user.pass" value="123456" style="height:30px;width: 270px; padding-left: 20px;" placeholder="请输入密码..." id="密码"/>
 			</div>
-			
-			<button type="button" id="login_btn">登<span style="width:20px;"></span>录</button>
+			<a style="color: #fff; float: right; padding-right: 8px;color: #2ec0f6" href="javascript:add()">忘记密码?</a>
+			<button style="margin: 28px auto 0;   display: block;" type="button" id="login_btn">登<span style="width:20px;"></span>录</button>
+			<button style="background-color: #880000!important;    display: block; margin: 10px auto 0;" type="button" id="login_btn">统一身份验证</button>
+			<div style="background-color: #f2dede; color: #a94442; margin-top: 10px; padding: 10px;">
+				<p>1：在校学生，教职工通过红色框“统一身份验证登录”登录系统，用户忘记密码可以通过综合服务平台提供的途径重置密码</p>
+				<p>2：没有校园一卡通的用户，输入用户名，密码点击蓝色“登录”按钮登录系统，用户名为教务系统中的四位工号，初始密码为证件号码后六位</p>
+			</div>
 		</form>
 	</div>
 </div>

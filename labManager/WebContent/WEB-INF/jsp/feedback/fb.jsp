@@ -35,7 +35,7 @@
 	故障说明：<input type="text" class="input-text" value="" placeholder=""   name="description" id="description"><br/><br/>
 
 	<div class="" style=" text-align:center">
-	   <input class="btn btn-primary radius" type="button" value="提交" onclick="sub()" >
+	   <input class="btn btn-primary radius" style="background-color: #457B9D!important;border-color: #457B9D;" type="button" value="提交" onclick="sub()" >
 	</div>
 </form>
     </div>
