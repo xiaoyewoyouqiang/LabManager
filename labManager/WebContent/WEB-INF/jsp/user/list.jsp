@@ -91,7 +91,9 @@ $(document).ready(function(){
                     <th>学院</th>
                     <th>班级</th>
                     <th>手机号码</th>
-                    <th>是否审核</th>
+                    <c:if test="${user.role.id == 1}">
+                    	<th>是否审核</th>
+                    </c:if>
                     <th id="popView" class="hidden-480">操作</th>
                 </tr>
                 </thead>
@@ -104,10 +106,12 @@ $(document).ready(function(){
                         <td class="hidden-480">${c.xy}</td>
                         <td class="hidden-480">${c.bj}</td>
                         <td class="hidden-480">${c.phone}</td>
-                        <td class="hidden-480">
-                            <c:if test="${c.isSh == 0}"><span style="color: red">未审核</span></c:if>
-                            <c:if test="${c.isSh == 1}"><span style="color: blue">已审核</span></c:if>
-                        </td>
+                        <c:if test="${user.role.id == 1}">
+                        	<td class="hidden-480">
+	                            <c:if test="${c.isSh == 0}"><span style="color: red">未审核</span></c:if>
+	                            <c:if test="${c.isSh == 1}"><span style="color: blue">已审核</span></c:if>
+	                        </td>
+                        </c:if>
                         <td>
                             <c:if test="${c.isSh == 0}">
                                 <a title="审核" onclick="sh(${c.id})" href="javascript:;"

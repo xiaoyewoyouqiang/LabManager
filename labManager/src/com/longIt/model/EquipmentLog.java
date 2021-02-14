@@ -9,10 +9,8 @@ import java.util.Date;
 public class EquipmentLog implements Serializable {
 
     private Integer id;
-    //是否借用（0未借用 1借用）
-    private Integer isYy;
-  //是否审核（0未审核 1审核）
-    private Integer isSh;
+    //状态0可借用，1已借用，2待审核借用，3待审核归还
+    private Integer state;
     //借用人
     private User user;
     //借用时间
@@ -32,22 +30,13 @@ public class EquipmentLog implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    @Column(name="isYy", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
-    public Integer getIsYy() {
-        return isYy;
-    }
-
-    public void setIsYy(Integer isYy) {
-        this.isYy = isYy;
-    }
-    @Column(name="isSh", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
-    public Integer getIsSh() {
-		return isSh;
+    @Column(name="state", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
+	public Integer getState() {
+		return state;
 	}
 
-	public void setIsSh(Integer isSh) {
-		this.isSh = isSh;
+	public void setState(Integer state) {
+		this.state = state;
 	}
 
 	@ManyToOne(fetch= FetchType.LAZY)

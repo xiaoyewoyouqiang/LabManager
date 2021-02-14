@@ -18,9 +18,9 @@ public class LaboratoryLogDaoImpl extends BaseDaoImpl<LaboratoryLog> implements 
         StringBuffer sb = new StringBuffer();
         sb.append("from LaboratoryLog where 1=1");
         if (bean != null) {
-            if (bean.getIsYy() != null && !"".equals(bean.getIsYy())) {
-                sb.append(" and isYy = :isYy");
-                alias.put("name", bean.getIsYy());
+            if (bean.getState() != null && !"".equals(bean.getState())) {
+                sb.append(" and state = :state");
+                alias.put("name", bean.getState());
             }
             if (bean.getUser() != null && bean.getUser().getId() != null && !"".equals(bean.getUser().getId())) {
                 sb.append(" and user.id = :userId");

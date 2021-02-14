@@ -30,9 +30,9 @@ public class LaboratoryDaoImpl extends BaseDaoImpl<Laboratory> implements Labora
                 sb.append(" and fzr like :fzr");
                 alias.put("fzr", "%" + bean.getFzr().trim() + "%");
             }
-            if (bean.getIsYy() != null && !"".equals(bean.getIsYy())) {
-                sb.append(" and isYy = :isYy");
-                alias.put("isYy", bean.getIsYy());
+            if (bean.getState() != null && !"".equals(bean.getState())) {
+                sb.append(" and state = :state");
+                alias.put("state", bean.getState());
             }
             if (bean.getUser() != null && bean.getUser().getName() != null && !"".equals(bean.getUser().getName())) {
                 sb.append(" and user.name like :username");

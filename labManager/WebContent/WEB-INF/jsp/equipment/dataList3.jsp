@@ -60,7 +60,7 @@
                         <th width="250">实验设备名称及型号</th>
                         <th width="200">地点</th>
                         <th width="200">实验图片信息</th>
-                        <th width="200">是否借用</th>
+                        <th width="200">状态</th>
                         <th width="250">操作</th>
                         <c:if test="${user.role.id == 1}">
                         	<th>是否审核</th>
@@ -86,29 +86,32 @@
                                 </c:if>
                             </td>
                             <td>
-                                <c:if test="${c.isJy == 0}">
+                                <c:if test="${c.state == 0}">
                                     <span class="label label-success radius">可借用</span>
                                 </c:if>
-                                <c:if test="${c.isJy == 1}">
+                                <c:if test="${c.state == 1}">
                                     <span class="label label-defaunt radius">已借用</span>
+                                </c:if>
+                                <c:if test="${c.state == 2 || c.state == 3}">
+                                    <span class="label label-info radius">待审核</span>
                                 </c:if>
                             </td>
                             <td class="td-manage">
-                            <c:if test="${c.isJy == 0}">
-                                <a onClick="yy(${c.id})"  href="javascript:;" title="预约"  class="btn btn-xs btn-success">借用</a>
+                            <c:if test="${c.state == 0}">
+                                <a onClick="yy(${c.id})"  href="javascript:;" title="借用"  class="btn btn-xs btn-success">借用</a>
                             </c:if>
-                                <c:if test="${c.isJy == 1}">
-                                <a onClick="qx(${c.id})"  href="javascript:;" title="取消预约"  class="btn btn-xs btn-success">归还</a>
+                                <c:if test="${c.state == 1}">
+                                <a onClick="qx(${c.id})"  href="javascript:;" title="归还"  class="btn btn-xs btn-success">归还</a>
                                 </c:if>
                         	</td>
                         	<c:if test="${user.role.id == 1}">
                         		<td>
-                        			<c:if test="${c.isSh == 0}"><span style="color: red">未审核</span></c:if>
-                            		<c:if test="${c.isSh == 1}"><span style="color: blue">已审核</span></c:if>
+                        			<c:if test="${c.state == 2 || c.state == 3}"><span style="color: red">未审核</span></c:if>
+                            		<c:if test="${c.state == 1 || c.state == 0}"><span style="color: blue">已审核</span></c:if>
                         		</td>
                         		<td>
-		                            <c:if test="${c.isSh == 0}">
-		                                <a title="审核" onclick="sh(${c.id})" href="javascript:;"
+		                            <c:if test="${c.state == 2 || c.state == 3}">
+		                                <a title="审核" onclick="sh(${c.id},${c.state})" href="javascript:;"
 		                                   class="btn btn-xs btn-info" style="background-color: #00B83F"><i
 		                                        class="fa fa-book"></i></a>
 		                            </c:if>
@@ -176,7 +179,7 @@
             async: false,
             success: function(data){
                 if (data.flag){
-                    layer.msg("借用成功", {
+                    layer.msg("待管理员审核", {
                         icon: 1,
                         time: 2000 //2秒关闭（如果不配置，默认是3秒）
                     }, function(){
@@ -196,12 +199,12 @@
         });
     }
     
-    function sh(id) {
+    function sh(id,state) {
         $.ajax({
             cache: false,
             type: "post",
             url: "equipment_updateSh.do",
-            data: {id: id},// 你的formid
+            data: {id: id,state: state},// 你的formid
             async: false,
             success: function (data) {
                 if (data.flag) {
@@ -227,7 +230,7 @@
             async: false,
             success: function(data){
                 if (data.flag){
-                    layer.msg("归还成功", {
+                    layer.msg("待管理员审核", {
                         icon: 1,
                         time: 2000 //2秒关闭（如果不配置，默认是3秒）
                     }, function(){

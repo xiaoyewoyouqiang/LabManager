@@ -42,6 +42,7 @@ public class LaboratoryAction extends ActionSupport implements ModelDriven<Labor
     private Laboratory laboratory;
     private Integer laboratoryId;
     private Map<String, Object> map = new HashMap();
+    
 
 
     /**
@@ -146,10 +147,10 @@ public class LaboratoryAction extends ActionSupport implements ModelDriven<Labor
      * @return
      */
     public void yy() throws IOException {
-        laboratory.setIsYy(1);
+        laboratory.setState(2);;
         laboratory.setUser(UserUtils.getUser());
         LaboratoryLog laboratoryLog = new LaboratoryLog();
-        laboratoryLog.setIsYy(1);
+        laboratoryLog.setState(2);
         laboratoryLog.setLaboratory(laboratory);
         laboratoryLog.setTime(new Date());
         laboratoryLog.setUser(UserUtils.getUser());
@@ -170,10 +171,10 @@ public class LaboratoryAction extends ActionSupport implements ModelDriven<Labor
         Laboratory laboratory1 = laboratoryService.findById(laboratory.getId());
         LaboratoryLog laboratoryLog = laboratoryLogService.findById(laboratory1.getLaboratoryLogId());
         if (laboratoryLog.getUser().getId() == UserUtils.getUser().getId()){
-            laboratory1.setIsYy(0);
+            laboratory1.setState(3);;
             laboratory1.setUser(null);
             laboratoryService.update(laboratory1);
-            laboratoryLog.setIsYy(0);
+            laboratoryLog.setState(3);
             laboratoryLog.setEndTime(new Date());
             laboratoryLog.setQx(UserUtils.getUser());
             laboratoryLogService.updates(laboratoryLog);
@@ -219,10 +220,17 @@ public class LaboratoryAction extends ActionSupport implements ModelDriven<Labor
      * @return
      */
     public void updateSh() throws IOException {
-    	laboratory.setIsSh(1);
-        laboratory.setUser(UserUtils.getUser());
+    	laboratory.setUser(UserUtils.getUser());
         LaboratoryLog laboratoryLog = new LaboratoryLog();
-        laboratoryLog.setIsSh(1);
+    	Integer state = laboratory.getState();//无法获取，要从list2.jsp中传入状态值
+    	if(state == 2) {
+    		laboratory.setState(1);
+    		laboratoryLog.setState(1);
+    	}
+    	if(state ==3) {
+    		laboratory.setState(0);
+    		laboratoryLog.setState(0);
+    	}
         laboratoryLog.setLaboratory(laboratory);
         laboratoryLog.setTime(new Date());
         laboratoryLog.setUser(UserUtils.getUser());

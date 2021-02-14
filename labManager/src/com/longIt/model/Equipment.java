@@ -23,8 +23,8 @@ public class Equipment implements Serializable {
     private Laboratory laboratory;
     //0未删除，1已删除
     private Integer isDelete;
-    //是否审核（0未审核 1审核）
-    private Integer isSh;
+    //状态0可借用，1已借用，2待审核借用，3待审核归还
+    private Integer state;
     private Integer isFw;
     private String ht;
     private Date fwTime;
@@ -34,8 +34,6 @@ public class Equipment implements Serializable {
     private Integer bxLogid;
     //借用
     private Integer jyId;
-    //是否借用
-    private Integer isJy;
     //服务时间
     private Date time;
     private User jyUser;
@@ -53,14 +51,6 @@ public class Equipment implements Serializable {
     public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
     }
-    @Column(name="isSh", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
-    public Integer getIsSh() {
-		return isSh;
-	}
-
-	public void setIsSh(Integer isSh) {
-		this.isSh = isSh;
-	}
 
 	public void setId(Integer id) {
         this.id = id;
@@ -157,8 +147,16 @@ public class Equipment implements Serializable {
     public void setIsFw(Integer isFw) {
         this.isFw = isFw;
     }
+    @Column(name="state", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
+    public Integer getState() {
+		return state;
+	}
 
-    public String getPhoto() {
+	public void setState(Integer state) {
+		this.state = state;
+	}
+
+	public String getPhoto() {
         return photo;
     }
 
@@ -182,14 +180,6 @@ public class Equipment implements Serializable {
         this.jyId = jyId;
     }
 
-    @Column(name="isJy", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
-    public Integer getIsJy() {
-        return isJy;
-    }
-
-    public void setIsJy(Integer isJy) {
-        this.isJy = isJy;
-    }
     @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="JyUser_id")
     public User getJyUser() {

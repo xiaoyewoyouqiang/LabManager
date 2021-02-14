@@ -191,13 +191,20 @@ public class EquipmentAction extends ActionSupport implements ModelDriven<Equipm
      * 
      */
     public void updateSh() throws IOException{
-    	equipment.setIsSh(1);
-        equipment.setJyUser(UserUtils.getUser());
+    	equipment.setJyUser(UserUtils.getUser());
         EquipmentLog log = new EquipmentLog();
+    	Integer state = equipment.getState();
+    	if(state == 2) {
+    		equipment.setState(1);
+    		log.setState(1);
+    	}
+    	if(state == 3) {
+    		equipment.setState(0);
+    		log.setState(0);
+    	}
         log.setUser(UserUtils.getUser());
         log.setTime(new Date());
         log.setEquipment(equipment);
-        log.setIsSh(1);
         equipmentLogService.save(log);
         equipment.setJyId(log.getId());
         equipmentService.updates(equipment);
@@ -233,14 +240,14 @@ public class EquipmentAction extends ActionSupport implements ModelDriven<Equipm
      */
     public void yy() throws IOException {
         Equipment equipment1 = equipmentService.findById(equipment.getId());
-        if (equipment1.getIsJy() == 0) {
-            equipment.setIsJy(1);
+        if (equipment1.getState() == 0) {
+            equipment.setState(2);
             equipment.setJyUser(UserUtils.getUser());
             EquipmentLog log = new EquipmentLog();
             log.setUser(UserUtils.getUser());
             log.setTime(new Date());
             log.setEquipment(equipment);
-            log.setIsYy(1);
+            log.setState(2);
             equipmentLogService.save(log);
             equipment.setJyId(log.getId());
             equipmentService.updates(equipment);
@@ -264,9 +271,9 @@ public class EquipmentAction extends ActionSupport implements ModelDriven<Equipm
         Equipment equipment1 = equipmentService.findById(equipment.getId());
         EquipmentLog equipmentLog = equipmentLogService.findById(equipment1.getJyId());
         if (equipmentLog.getUser().getId() == UserUtils.getUser().getId()) {
-            equipment1.setIsJy(0);
+            equipment1.setState(3);
             equipmentService.update(equipment1);
-            equipmentLog.setIsYy(0);
+            equipmentLog.setState(3);
             equipmentLog.setEndTime(new Date());
             equipmentLog.setQx(UserUtils.getUser());
             equipmentLogService.updates(equipmentLog);

@@ -21,10 +21,8 @@ public class Laboratory implements Serializable {
     private String bz;
     //0未删除，1已删除
     private Integer isDelete;
-    //是否审核（0未预约 1预约）
-    private Integer isYy;
-    //是否审核（0未审核 1审核）
-    private Integer isSh;
+    //状态0可预约，1已预约，2待审核预约，3待审核取消预约
+    private Integer state;
     //预约人
     private User user;
     //预约时间
@@ -80,21 +78,13 @@ public class Laboratory implements Serializable {
     public void setBz(String bz) {
         this.bz = bz;
     }
-    @Column(name="isYy", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
-    public Integer getIsYy() {
-        return isYy;
-    }
-    
-    public void setIsYy(Integer isYy) {
-        this.isYy = isYy;
-    }
-    @Column(name="isSh", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
-    public Integer getIsSh() {
-		return isSh;
+    @Column(name="state", nullable=false, columnDefinition="int default 0", updatable = true, insertable = false)
+	public Integer getState() {
+		return state;
 	}
-
-	public void setIsSh(Integer isSh) {
-		this.isSh = isSh;
+	
+	public void setState(Integer state) {
+		this.state = state;
 	}
 
 	@ManyToOne(fetch= FetchType.LAZY)
