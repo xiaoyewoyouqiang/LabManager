@@ -93,7 +93,7 @@
                         <tr>
                         <td><u style="cursor:pointer" class="text-primary" >${c.name}</u></td>
                           <!--<td>${c.fzr}</td>-->
-                        <td>${c.fzrDh}</td>
+                        <td width="400">${c.fzrDh}</td>
                         <td>${c.address}</td>
                         <td>${c.time}</td>
                         <td class="td-manage">
