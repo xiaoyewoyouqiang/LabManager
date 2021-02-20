@@ -162,12 +162,12 @@
                 <input value="" name="name" type="text" id="实验室名称" class="text_add"/>
             </span>
         </li>
-        <!-- <li>
+        <li>
             <label class="label_name"style="width: 130px">负责人：</label>
             <span class="add_name">
             <input name="fzr" type="text" id="负责人" class="text_add"/>
         </span>
-        </li> -->
+        </li>
         <li><label class="label_name" style="width: 130px">实验室功能：</label>
             <span class="add_name">
                 <input name="fzrDh" type="text" id="实验室功能" class="text_add"/>
@@ -197,6 +197,7 @@
             maxmin: true,
             shadeClose: true, //点击遮罩关闭层
             area : ['800px' , '400px'],
+            offset:'100px',
             content:$('#add_menber_style'),
             btn:['提交','取消'],
             yes:function(index,layero){
@@ -243,6 +244,7 @@
         layer.open({
             type: 2,
             area: ['910px', '500px'],
+            offset:'100px',
             content: ['laboratory_edit.do?laboratoryId=' + id, 'no']  //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
         });
     }

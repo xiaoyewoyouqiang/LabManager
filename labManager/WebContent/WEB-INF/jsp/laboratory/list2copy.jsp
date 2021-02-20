@@ -91,12 +91,12 @@
                         <td>${c.fzrDh}</td>
                         <td>${c.address}</td>
                         <td>
-                            <c:if test="${c.isYy == 0}"><span class="label label-success radius">可预约</span></c:if>
-                            <c:if test="${c.isYy == 1}"><span class="label label-defaunt radius">已预约</span></c:if>
+                            <c:if test="${c.state == 0}"><span class="label label-success radius">可预约</span></c:if>
+                            <c:if test="${c.state == 1}"><span class="label label-defaunt radius">已预约</span></c:if>
                         </td>
                             <td>${c.user.realName}</td>
                             <td class="td-manage">
-                                <c:if test="${c.isYy == 0}">
+                                <c:if test="${c.state == 0}">
                           <a onClick="yy(${c.id})"  href="javascript:;" title="预约"  class="btn btn-xs btn-success">预约</a>
                                 </c:if>
                                     <a onClick="qx(${c.id})"  href="javascript:;" title="取消预约"  class="btn btn-xs btn-success">取消预约</a>
@@ -156,7 +156,7 @@
 </html>
 <script>
     function yy(id) {
-        updateId("laboratory_yy.do", "预约成功", id);
+        updateId("laboratory_yy.do", "待管理员审核", id);
     }
 
     function qx(id) {
@@ -168,7 +168,7 @@
             async: false,
             success: function(data){
                 if (data.flag){
-                    layer.msg("取消成功", {
+                    layer.msg("待管理元审核", {
                         icon: 1,
                         time: 2000 //2秒关闭（如果不配置，默认是3秒）
                     }, function(){

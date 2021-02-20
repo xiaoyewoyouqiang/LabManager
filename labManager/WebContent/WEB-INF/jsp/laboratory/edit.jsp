@@ -61,12 +61,12 @@
                 <input value="${bean.name}" name="name" type="text" id="实验室名称" class="text_add"/>
             </span>
             </li>
-            <!-- <li>
+            <li>
                 <label class="label_name"style="width: 130px">负责人：</label>
                 <span class="add_name">
             <input name="fzr" type="text" id="负责人" class="text_add" value="${bean.fzr}"/>
         </span>
-            </li> -->
+            </li>
             <li><label class="label_name" style="width: 130px">实验室功能：</label>
                 <span class="add_name">
                 <input name="fzrDh" type="text" id="实验室功能" class="text_add" value="${bean.fzrDh}"/>
