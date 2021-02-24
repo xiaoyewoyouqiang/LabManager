@@ -61,22 +61,25 @@
                 <table class="table table-striped table-bordered table-hover" id="sample-table">
                     <thead>
                     <tr>
-                        <th width="130">实验室名称及型号</th>
-                        <th width="300">报修实验室名称及型号</th>
-                        <th width="120">报修开始时间</th>
-                        <th width="120">报修结束时间</th>
-                        <th width="130">设备位置</th>
+                        <th>维修时间</th>
+                        <th>实验室名称</th>
+                        <th>机器编号</th>
+                        <th>检查情况</th>
+                        <th width="300">跟进（维修）结果</th>
+                        <th>维修人</th>
+                        <th>备注</th>
                     </tr>
                     </thead>
                     <tbody>
                     <c:forEach items="${pagers.datas}" var="c" varStatus="status">
                         <tr>
+                        	<td>${c.bxTime}</td>
                             <td>${c.equipment.xh}</td>
                             <td>${c.title}</td>
-                            <td>${c.bxTime}</td>
                             <td>${c.endTime}</td>
                             <td>${c.wz}</td>
-                           
+                           <td></td>
+                           <td>无</td>
                         </tr>
                     </c:forEach>
                     </tbody>

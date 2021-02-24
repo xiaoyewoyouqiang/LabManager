@@ -82,13 +82,13 @@
 			<div style="margin:5px 0px;     position: relative;">
 				<img style="    position: absolute;
     left: 3px;
-    top: 33px;" src="https://static.pwesports.cn/dota2static/file/6738b81f-3d79-4a0b-b50c-4024e40d81f6.png" />
+    top: 33px;" src="${pageContext.request.contextPath}/resource/images/6738b81f-3d79-4a0b-b50c-4024e40d81f6.png" />
 				<input type="text" name="user.name" value="admin" style="height:30px;padding-left: 20px;" placeholder="请输入账号..." id="用户名"/>
 			</div>
 			<div style="margin:5px 0px;    position: relative;">
 			<img style="    position: absolute;
     left: 3px;
-    top: 8px;" src="https://static.pwesports.cn/dota2static/file/6c187a00-624e-40fa-8bfd-d5315e8d239e.png" />
+    top: 8px;" src="${pageContext.request.contextPath}/resource/images/6c187a00-624e-40fa-8bfd-d5315e8d239e.png" />
 				<input  type="password" name="user.pass" value="123789scnu" style="height:30px;width: 270px; padding-left: 20px;" placeholder="请输入密码..." id="密码"/>
 			</div>
 			<a style="color: #fff; float: right; padding-right: 8px;color: #2ec0f6" href="javascript:add()">忘记密码?</a>

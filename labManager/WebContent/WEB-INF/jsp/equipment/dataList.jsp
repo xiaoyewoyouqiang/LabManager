@@ -101,7 +101,7 @@
                                 </c:if>
                                 <%--<a href="javascript:;" id="member_add" class="btn btn-warning"><i class="icon-plus"></i>添加实验室</a>--%>
 
-                                <a title="添加供应商合同"  onclick="cli(${c.id})" href="javascript:;"  class="btn btn-xs btn-info" ><i class="icon-edit bigger-120"></i></a>
+                                <a title="上传教学计划"  onclick="cli(${c.id})" href="javascript:;"  class="btn btn-xs btn-info" ><i class="icon-edit bigger-120"></i></a>
                             <a title="删除" href="javascript:;"  onclick="member_del(this,'1')" class="btn btn-xs btn-warning" ><i class="icon-trash  bigger-120"></i></a>
                         </td>
                             <td></td>

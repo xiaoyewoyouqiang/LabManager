@@ -62,7 +62,7 @@
                         <th width="300">地点</th>
                         <th width="200">数量</th>
                         <th width="200">设备图片信息</th>
-                        <th width="250">操作${ctx}</th>
+                        <th width="250">操作</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -89,8 +89,8 @@
                                 </c:if>
                             </td>
                         <td class="td-manage">
-                                <a title="添加图纸图片"  onclick="cli(${c.id})" href="javascript:;"  class="btn btn-xs btn-info" ><i class="icon-edit bigger-120"></i></a>
-                            <a title="删除图片和说明书" href="javascript:;"  onclick="cli2(${c.id})" class="btn btn-xs btn-success" ><i class="icon-check bigger-120"></i></a>
+                                <a title="添加设备图片"  onclick="cli(${c.id})" href="javascript:;"  class="btn btn-xs btn-info" ><i class="icon-edit bigger-120"></i></a>
+                            <a title="删除设备图片" href="javascript:;"  onclick="cli2(${c.id})" class="btn btn-xs btn-success" ><i class="icon-check bigger-120"></i></a>
                         </td>
                             <td></td>
                     </tr>

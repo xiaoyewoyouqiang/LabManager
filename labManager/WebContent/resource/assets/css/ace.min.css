@@ -2509,7 +2509,14 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
   font-size: 13px;
   text-decoration: none;
 }
-
+.skin-1.rtl .time{
+	background-color: #222a2d!important;
+	
+	border-left: 1px solid #fff;
+}
+.skin-1.rtl .time em{
+	color: #fff!important;
+}
 .nav-list>li>a i:before{
 	display: none;
 }
@@ -2531,6 +2538,12 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
 
 .skin-1 .nav-list>li>a i svg{
 	background-color: #fff;
+}
+.skin-1 .navbar-brand b{
+	color: #fff!important;
+}
+.skin-1 .navbar{
+	border-color: #3f4e54;
 }
 .skin-1 .nav-list>li>a i svg g{
 	fill: #222a2d;

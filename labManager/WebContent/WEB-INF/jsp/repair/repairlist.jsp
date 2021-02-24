@@ -71,7 +71,7 @@
                             <c:if test="${c.isBx == 1}"><span class="label label-defaunt radius">维修中</span></c:if>
                         </td>
                         <td class="td-manage">
-                            <c:if test="${c.isBx == 0}"><a title="保修" onclick="bx(${c.id})" href="javascript:;"  class="btn btn-xs btn-info" ><i class="icon-edit bigger-120"></i></a></c:if>
+                            <c:if test="${c.isBx == 0}"><a title="进行维修" onclick="bx(${c.id})" href="javascript:;"  class="btn btn-xs btn-info" ><i class="icon-edit bigger-120"></i></a></c:if>
                             <c:if test="${c.isBx == 1}"><a title="恢复使用" href="javascript:;"  onclick="hf(${c.id})" class="btn btn-xs btn-success" ><i class="icon-check bigger-120"></i></a>
                             </c:if>
 

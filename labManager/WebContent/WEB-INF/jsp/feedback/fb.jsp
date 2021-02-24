@@ -32,7 +32,7 @@
 	实验室楼层号：<input type="text" class="input-text" value="" placeholder=""   name="floor" id="floor"><br/><br/>
 	实验室房间号：<input type="text" class="input-text" value="" placeholder=""   name="room" id="room"><br/><br/>
 	故障设备编号：<input type="text" class="input-text" value="" placeholder=""   name="number" id="number"><br/><br/>
-	故障说明：<input type="text" class="input-text" value="" placeholder=""   name="description" id="description"><br/><br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;故障说明：<input type="text" class="input-text" value="" placeholder=""   name="description" id="description"><br/><br/>
 
 	<div class="" style=" text-align:center">
 	   <input class="btn btn-primary radius" style="background-color: #457B9D!important;border-color: #457B9D;" type="button" value="提交" onclick="sub()" >
