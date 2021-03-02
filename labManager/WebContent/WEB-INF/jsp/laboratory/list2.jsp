@@ -93,7 +93,7 @@
                         <tr>
                         <td><u style="cursor:pointer" class="text-primary">${c.name}</u></td>
                         <!-- <td>${c.fzr}</td> -->
-                        <td>${c.fzrDh}</td>
+                        <td width="400">${c.fzrDh}</td>
                         <td>${c.address}</td>
                         <td>
                             <c:if test="${c.state == 0}"><span class="label label-success radius">可预约</span></c:if>

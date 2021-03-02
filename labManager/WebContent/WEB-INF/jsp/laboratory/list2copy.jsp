@@ -80,7 +80,6 @@
                         <th width="120">地点</th>
                         <th width="120">是否预约</th>
                         <th width="120">预约人</th>
-                        <th width="250">操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -88,19 +87,14 @@
                         <tr>
                         <td><u style="cursor:pointer" class="text-primary">${c.name}</u></td>
                         <!-- <td>${c.fzr}</td> -->
-                        <td>${c.fzrDh}</td>
+                        <td width="400">${c.fzrDh}</td>
                         <td>${c.address}</td>
                         <td>
                             <c:if test="${c.state == 0}"><span class="label label-success radius">可预约</span></c:if>
                             <c:if test="${c.state == 1}"><span class="label label-defaunt radius">已预约</span></c:if>
                         </td>
                             <td>${c.user.realName}</td>
-                            <td class="td-manage">
-                                <c:if test="${c.state == 0}">
-                          <a onClick="yy(${c.id})"  href="javascript:;" title="预约"  class="btn btn-xs btn-success">预约</a>
-                                </c:if>
-                                    <a onClick="qx(${c.id})"  href="javascript:;" title="取消预约"  class="btn btn-xs btn-success">取消预约</a>
-                        </td>
+                            
                     </tr>
                           </c:forEach>
                     </tbody>

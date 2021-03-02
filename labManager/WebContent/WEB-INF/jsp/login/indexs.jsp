@@ -284,16 +284,16 @@
 						<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 							<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
 								<a class="btn btn-success"
-									style="background-color: #1D3557 !important; border-color: #1D3557;">
+									style="background-color: #1D3557 !important; border-color: #1D3557; disabled:disabled;cursor:default">
 									<i class="icon-signal"></i>
 								</a> <a class="btn btn-info"
-									style="background-color: #1D3557 !important; border-color: #1D3557;">
+									style="background-color: #1D3557 !important; border-color: #1D3557;disabled:disabled;cursor:default">
 									<i class="icon-pencil"></i>
 								</a> <a class="btn btn-warning"
-									style="background-color: #1D3557 !important; border-color: #1D3557;">
+									style="background-color: #1D3557 !important; border-color: #1D3557;disabled:disabled;cursor:default">
 									<i class="icon-group"></i>
 								</a> <a class="btn btn-danger"
-									style="background-color: #1D3557 !important; border-color: #1D3557;">
+									style="background-color: #1D3557 !important; border-color: #1D3557;disabled:disabled;cursor:default">
 									<i class="icon-cogs"></i>
 								</a>
 							</div>
@@ -765,7 +765,7 @@
 						</script>
 						<div class="breadcrumbs" id="breadcrumbs">
 							<ul class="breadcrumb">
-								<li><i class="icon-home home-icon"></i> <a href="indexs.jsp">首页</a>
+								<li><i class="icon-home home-icon"></i> <span>首页</span>
 								</li>
 								<li class="active"><span class="Current_page iframeurl"></span></li>
 								<li class="active" id="parentIframe"><span class="parentIframe iframeurl"></span></li>
