@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="${ctx}/resource/assets/css/font-awesome-ie7.min.css" />
     <link rel="stylesheet" href="${ctx}/resource/assets/css/ace-ie.min.css" />
     <script src="${ctx}/resource/assets/js/jquery.min.js"></script>
-
+	<style>
+		li{
+			list-style: none;
+		}
+	</style>
     <script src="${ctx}/resource/assets/js/bootstrap.min.js"></script>
     <script src="${ctx}/resource/assets/js/typeahead-bs2.min.js"></script>
     <script src="${ctx}/resource/assets/js/jquery.dataTables.min.js"></script>

@@ -280,6 +280,7 @@ public class LaboratoryAction extends ActionSupport implements ModelDriven<Labor
     public void delete() throws IOException {
         laboratory.setIsDelete(1);
         laboratoryService.updates(laboratory);
+        laboratoryService.delete(laboratory.getId());
         map.put("flag", true);
         map.put("url", "laboratory_list.do");
         JsonUtils.toJson(map);

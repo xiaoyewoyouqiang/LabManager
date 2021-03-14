@@ -251,7 +251,6 @@
 
     /*用户-删除*/
     function member_del(id){
-        alert(1111)
         layer.confirm('确认要删除吗？',function(index){
             $.ajax({
                 cache: false,

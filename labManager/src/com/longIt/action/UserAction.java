@@ -174,6 +174,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
         User user1 = userService.findById(userId);
         user1.setIsDelete(1);
         userService.update(user1);
+        userService.delete(user1.getId());
         map.put("flag", true);
         map.put("url", "user_list.do");
         JsonUtils.toJson(map);

@@ -67,9 +67,9 @@
             </span>
             </li>
             <li>
-                <label class="label_name"style="width: 130px">设备价格：</label>
+                <label class="label_name"style="width: 130px">实验设备单价：</label>
                 <span class="add_name">
-            <input name="jg" type="text" id="设备价格" class="text_add" value="${bean.jg}"/>
+            <input name="jg" type="text" id="实验设备单价" class="text_add" value="${bean.jg}"/>
         </span>
             </li>
 
@@ -90,9 +90,9 @@
                 <input name="zzs" type="text" id="设备制造商" class="text_add" value="${bean.zzs}"/>
             </span>
                 <div class="prompt r_f"></div></li>
-            <li class="adderss"><label class="label_name" style="width: 130px">设备序列号：</label>
+            <li class="adderss"><label class="label_name" style="width: 130px">设备数量：</label>
                 <span class="add_name">
-                <input name="sbxlh" type="text" id="设备序列号" class="text_add" style=" width:350px" value="${bean.sbxlh}"/>
+                <input name="sbxlh" type="text" id="设备数量" class="text_add" style=" width:350px" value="${bean.sbxlh}"/>
             </span>
             </li>
            

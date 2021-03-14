@@ -109,6 +109,7 @@ public class NoticeAction extends ActionSupport implements ModelDriven<Notice> {
         Notice bean = service.findById(notice.getId());
         bean.setIsDelete(1);
         service.update(bean);
+        service.delete(bean.getId());
         map.put("flag", true);
         map.put("url", "notice_list.do");
         JsonUtils.toJson(map);
