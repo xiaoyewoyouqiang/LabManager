@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
-<title>高校实验室管理平台</title>
+<title>专业实验室信息管理系统</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/loginStyle/css/style2.0.css">
     <script src="${pageContext.request.contextPath}/resource/js/jquery-1.9.1.min.js"></script>
     <script src="${pageContext.request.contextPath}/resource/assets/layer/layer.js" type="text/javascript"></script>
@@ -66,7 +66,7 @@
 
 <body>
 <div class="title6">
-<p><img style="display: inline-block;vertical-align: middle; height: 80px; margin: 0 20px;" src="${pageContext.request.contextPath}/resource/images/be76631b89592866c532412c9458699.png" /><b style="font-family: '幼圆';font-size: 38px;color: white; line-height: 100%; display: inline-block;vertical-align: middle; padding-top: 3px;"><span>机房管理系统<i style="display:block; font-size: 14px;">Computer-Labs Management System</i></span></b></p>
+<p><img style="display: inline-block;vertical-align: middle; height: 80px; margin: 0 20px;" src="${pageContext.request.contextPath}/resource/images/be76631b89592866c532412c9458699.png" /><b style="font-family: '幼圆';font-size: 38px;color: white; line-height: 100%; display: inline-block;vertical-align: middle; padding-top: 3px;"><span>专业实验室信息管理系统<i style="display:block; font-size: 14px;">Professional Laboratory Information Management System</i></span></b></p>
 </div>
 <div id="contPar" class="contPar">
 	
@@ -83,13 +83,13 @@
 				<img style="    position: absolute;
     left: 3px;
     top: 33px;" src="${pageContext.request.contextPath}/resource/images/6738b81f-3d79-4a0b-b50c-4024e40d81f6.png" />
-				<input type="text" name="user.name" value="admin" style="height:30px;padding-left: 20px;" placeholder="请输入账号..." id="用户名"/>
+				<input type="text" name="user.name" placeholder="输入用户名" style="height:30px;padding-left: 20px;" placeholder="请输入账号..." id="用户名"/>
 			</div>
 			<div style="margin:5px 0px;    position: relative;">
 			<img style="    position: absolute;
     left: 3px;
     top: 8px;" src="${pageContext.request.contextPath}/resource/images/6c187a00-624e-40fa-8bfd-d5315e8d239e.png" />
-				<input  type="password" name="user.pass" value="123789scnu" style="height:30px;width: 270px; padding-left: 20px;" placeholder="请输入密码..." id="密码"/>
+				<input  type="password" name="user.pass" placeholder="输入密码" style="height:30px;width: 270px; padding-left: 20px;" placeholder="请输入密码..." id="密码"/>
 			</div>
 			<a style="color: #fff; float: right; padding-right: 8px;color: #2ec0f6" href="javascript:add()">忘记密码?</a>
 			<button style="margin: 28px auto 0;   display: block;" type="button" id="login_btn">登<span style="width:20px;"></span>录</button>

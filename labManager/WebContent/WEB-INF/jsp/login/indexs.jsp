@@ -6,7 +6,7 @@
 
 <head>
 <meta charset="utf-8" />
-<title>网站后台管理系统</title>
+<title>专业实验室信息管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link href="${ctx}/resource/assets/css/bootstrap.min.css"
 	rel="stylesheet" />
@@ -240,9 +240,8 @@
 							<img
 								style="display: inline-block; vertical-align: middle; height: 100%; margin: 0 20px;"
 								src="${ctx}/resource/images/be76631b89592866c532412c9458699.png" /><b
-								style="font-family: '幼圆'; font-size: 38px; color: #337ab7; line-height: 100%; display: inline-block; vertical-align: middle; padding-top: 3px;"><span>机房管理系统<i
-									style="display: block; font-size: 14px;">Computer-Labs
-										Management System</i></span></b>
+								style="font-family: '幼圆'; font-size: 38px; color: #337ab7; line-height: 100%; display: inline-block; vertical-align: middle; padding-top: 3px;"><span>专业实验室信息管理系统<i
+									style="display: block; font-size: 14px;">Professional Laboratory Information Management System</i></span></b>
 						</p>
 				</small>
 				</a>
@@ -486,10 +485,6 @@
 										<li class="home"><a href="javascript:void(0)"
 											name="laboratory_list.do" title="实验室列表" class="iframeurl">
 												<i class="icon-double-angle-right"></i>实验室基本信息
-										</a></li>
-										<li class="home"><a href="javascript:void(0)"
-											name="equipment_dataList.do" title="实验室大纲" class="iframeurl">
-												<i class="icon-double-angle-right"></i>实验室大纲
 										</a></li>
 									</c:if>
 

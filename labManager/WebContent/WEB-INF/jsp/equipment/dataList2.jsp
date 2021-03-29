@@ -59,9 +59,9 @@
 							<li><label class="l_f">实验室名称及型号</label><input name="xh"
 								type="text" value="${bean.xh}" class="text_add"
 								style="width: 200px" /></li>
-							<li><label class="l_f">设备制造商</label><input name="zzs"
+							<%-- <li><label class="l_f">设备制造商</label><input name="zzs"
 								type="text" value="${bean.zzs}" class="text_add"
-								style="width: 200px" /></li>
+								style="width: 200px" /></li> --%>
 							<!-- <li><label class="l_f">设备序列号</label><input name="sbxlh" type="text" value="${bean.sbxlh}" class="text_add"  style=" width:200px"/></li> -->
 							<li style="width: 90px;"><button type="submit"
 									class="btn_search">
@@ -72,7 +72,7 @@
 				</form>
 				<div class="border clearfix">
 					<span class="l_f"> <a href="javascript:ovid()"
-						id="member_add" class="btn btn-warning"><i class="icon-plus"></i>添加实验室课程与设备</a>
+						id="member_add" class="btn btn-warning"><i class="icon-plus"></i>添加实验室设备</a>
 					</span>
 				</div>
 				<div class="table_menu_list">
@@ -83,7 +83,7 @@
 								<th width="250">实验设备名称及型号</th>
 								<th width="130">实验设备单价</th>
 								<th width="200">设备数量</th>
-								<th width="120">设备制造商</th>
+								<!-- <th width="120">设备制造商</th> -->
 								<th width="200">设备图片信息</th>
 								<th width="250">操作</th>
 							</tr>
@@ -94,7 +94,7 @@
 									<td>${c.xh}</td>
 									<td>${c.jg}</td>
 									<td>${c.sbxlh}</td>
-									<td>${c.zzs}</td>
+									<%-- <td>${c.zzs}</td> --%>
 									<td><c:if test="${not empty c.photo}">
 											<a href="##" data-toggle="modal"
 												data-target="#photo${status.index}"
@@ -200,11 +200,11 @@
 			<div class="add_menber" id="add_equipment_style"
 				style="display: none">
 				<ul>
-					<li class="adderss"><label class="label_name"
+					<!-- <li class="adderss"><label class="label_name"
 						style="width: 130px">实验课程：</label> <span class="add_name">
 							<input name="bz" type="text" id="实验课程" class="text_add"
 							style="width: 350px" />
-					</span></li>
+					</span></li> -->
 				</ul>
 				<li><label class="label_name" style="width: 130px">实验室名称及型号：</label>
 					<span class="add_name"> <input value="" name="xh"
@@ -215,7 +215,7 @@
 						id="实验设备单价" class="text_add" />
 				</span></li>
 
-				<li><label class="label_name" style="width: 130px">所属实验室：</label>
+				<%-- <li><label class="label_name" style="width: 130px">所属实验室：</label>
 					<span class="add_name"> <select name="laboratory.id"
 						style="width: 165px; margin-left: 10px" class="text_add">
 							<option value="" id="所属实验室">请选择</option>
@@ -223,13 +223,13 @@
 								<option value="${b.id}">${b.name}</option>
 							</c:forEach>
 					</select>
-				</span></li>
+				</span></li> --%>
 
-				<li><label class="label_name" style="width: 130px">设备制造商：</label>
+				<!-- <li><label class="label_name" style="width: 130px">设备制造商：</label>
 					<span class="add_name"> <input name="zzs" type="text"
 						id="设备制造商" class="text_add" />
 				</span>
-					<div class="prompt r_f"></div></li>
+					<div class="prompt r_f"></div></li> -->
 				<li class="adderss"><label class="label_name"
 					style="width: 130px">设备数量：</label> <span class="add_name">
 						<input name="sbxlh" type="text" id="设备数量" class="text_add"

@@ -49,7 +49,7 @@
             <!---->
             <div class="border clearfix">
        <span class="l_f">
-        <a href="javascript:ovid()" id="member_add" class="btn btn-warning"><i class="icon-plus"></i>添加实验室课程与设备</a>
+        <a href="javascript:ovid()" id="member_add" class="btn btn-warning"><i class="icon-plus"></i>添加实验室设备</a>
        </span>
             </div>
             <div class="table_menu_list">
@@ -183,7 +183,7 @@
     $('#member_add').on('click', function(){
         layer.open({
             type: 1,
-            title: '添加实验课程与设备',
+            title: '添加实验设备',
             maxmin: true,
             shadeClose: true, //点击遮罩关闭层
             area : ['800px' , '400px'],
