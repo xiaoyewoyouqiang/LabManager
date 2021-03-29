@@ -410,8 +410,8 @@ public class EquipmentAction extends ActionSupport implements ModelDriven<Equipm
 
     public void delete() throws IOException {
         equipment.setIsDelete(1);
-//        equipmentService.updates(equipment);
-        equipmentService.delete(equipment.getId());
+        equipmentService.updates(equipment);
+//        equipmentService.delete(equipment.getId());
         map.put("flag", true);
         map.put("url", "equipment_list.do");
         JsonUtils.toJson(map);
