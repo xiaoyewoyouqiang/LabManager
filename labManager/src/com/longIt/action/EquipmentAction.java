@@ -312,7 +312,7 @@ public class EquipmentAction extends ActionSupport implements ModelDriven<Equipm
         }
         equipmentService.updates(equipment);
         ActionContext.getContext().put("url", "equipment_dataList.do");
-        return "redirect";
+        return SUCCESS;
     }
 
     /**
