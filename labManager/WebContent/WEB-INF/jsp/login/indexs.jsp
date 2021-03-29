@@ -513,10 +513,11 @@
 											</i><span class="menu-text"> 实验设备管理 </span><b
 												class="arrow icon-angle-down"></b></a>
 										<ul class="submenu">
+										<c:if test="${role != 'xs'}">
 											<li class="home"><a href="javascript:void(0)" name="equipment_list.do"
 													title="实验设备详情管理" class="iframeurl"><i
 														class="icon-double-angle-right"></i>实验设备详情管理</a></li>
-											<c:if test="${role == 'xs'}">
+											</c:if><c:if test="${role == 'xs'}">
 												<li class="home"><a href="javascript:void(0)"
 														name="laboratory_list2copy.do" title="实验室列表" class="iframeurl">
 														<i class="icon-double-angle-right"></i>实验室预约
