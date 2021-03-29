@@ -54,29 +54,31 @@
 <!--添加用户图层-->
 <form action="equipment_update.do" method="post" class="form form-horizontal" id="update" >
     <input value="${bean.id}" name="id"  type="hidden" class="text_add"/>
-    <div class="add_menber" id="add_menber_update">
+    <div class="add_menber" id="add_menber_update" >
         <ul>
-         <li class="adderss"><label class="label_name" style="width: 130px">实验室课程：</label>
+         <%-- <li class="adderss"><label class="label_name" style="width: 130px">实验室课程：</label>
                 <span class="add_name">
                 <input name="bz" type="text" id="实验室课程" class="text_add" style=" width:350px" value="${bean.bz}"/>
             </span>
-            </li>
-            <li><label class="label_name" style="width: 130px">实验室名称及型号：</label>
+            </li> --%>
+            
+            <li><label class="label_name" style="width: 130px">实验设备名称：</label>
                 <span class="add_name">
                 <input value="${bean.xh}" name="xh" type="text" id="实验室名称及型号" class="text_add" />
             </span>
             </li>
-            <li>
+            
+            <%-- <li>
                 <label class="label_name"style="width: 130px">实验设备单价：</label>
                 <span class="add_name">
             <input name="jg" type="text" id="实验设备单价" class="text_add" value="${bean.jg}"/>
         </span>
-            </li>
+            </li> --%>
 
             <li>
-                <label class="label_name"style="width: 130px">所属实验室：</label>
+                所属实验室：
                 <span class="add_name">
-                <select name="laboratory.id" style="width: 165px; margin-left: 10px" class="text_add">
+                <select name="laboratory.id" style="width: 165px; margin-right: 10px" class="text_add">
                     <option value="" id="所属实验室">请选择</option>
                     <c:forEach items="${pagers2.datas}" var="b" varStatus="l">
                         <option value="${b.id}" <c:if test="${b.id == bean.laboratory.id}"> selected="selected"</c:if> >${b.name}</option>
@@ -84,15 +86,15 @@
                 </select>
         </span>
             </li>
-
-            <li><label class="label_name" style="width: 130px">设备制造商：</label>
+		
+            <%-- <li><label class="label_name" style="width: 130px">设备制造商：</label>
                 <span class="add_name">
                 <input name="zzs" type="text" id="设备制造商" class="text_add" value="${bean.zzs}"/>
             </span>
-                <div class="prompt r_f"></div></li>
+                <div class="prompt r_f"></div></li> --%>
             <li class="adderss"><label class="label_name" style="width: 130px">设备数量：</label>
                 <span class="add_name">
-                <input name="sbxlh" type="text" id="设备数量" class="text_add" style=" width:350px" value="${bean.sbxlh}"/>
+                <input name="sbxlh" type="text" id="设备数量" class="text_add" style=" width:130px" value="${bean.sbxlh}"/>
             </span>
             </li>
            

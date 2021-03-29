@@ -183,7 +183,7 @@
 			</span>
 				<div class="prompt r_f"></div></li>
 			<!-- <li class="adderss"><label class="label_name"
-				style="width: 130px">设备序列号：</label> <span class="add_name"> <input
+				style="width: 130	px">设备序列号：</label> <span class="add_name"> <input
 					name="sbxlh" type="text" id="设备序列号" class="text_add"
 					style="width: 350px" />
 			</span></li> -->
@@ -197,7 +197,7 @@
     $('#member_add').on('click', function(){
         layer.open({
             type: 1,
-            title: '添加实验课程与设备',
+            title: '添加实验室设备',
             maxmin: true,
             shadeClose: true, //点击遮罩关闭层
             area : ['500px' , '300px'],

@@ -68,7 +68,7 @@
                     <tbody>
                       <c:forEach items="${pagers.datas}" var="c" varStatus="l">
                         <tr>
-                        <td>${c.equipment.xh}</td>
+                        <%-- <td>${c.equipment.xh}</td> --%>
                         <td>${c.user.name}</td>
                         <td>${c.time}</td>
                         <td>${c.qx.name}</td>

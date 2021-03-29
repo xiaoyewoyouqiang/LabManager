@@ -74,7 +74,7 @@
                     <c:forEach items="${pagers.datas}" var="c" varStatus="status">
                         <tr>
                         	<td>${c.bxTime}</td>
-                            <td>${c.equipment.xh}</td>
+                            <%-- <td>${c.equipment.xh}</td> --%>
                             <td>${c.title}</td>
                             <td>${c.endTime}</td>
                             <td>${c.wz}</td>

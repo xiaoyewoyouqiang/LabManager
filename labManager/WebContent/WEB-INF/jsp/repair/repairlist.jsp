@@ -52,9 +52,9 @@
                     <thead>
                     <tr>
                         <th width="100">实验室名称及型号</th>
-                        <th width="120">设备价格</th>
-                        <th width="120">设备制造商</th>
-                        <th width="120">设备序列号</th>
+                        <!-- <th width="120">设备价格</th> -->
+                        <th width="120">设备地点</th>
+                        <!-- <th width="120">设备序列号</th> -->
                         <th width="120">是否维修</th>
                         <th width="250">操作</th>
                     </tr>
@@ -63,9 +63,9 @@
                       <c:forEach items="${pagers3.datas}" var="c" varStatus="l">
                         <tr>
                         <td>${c.xh}</td>
-                        <td>${c.jg}</td>
+                        <%-- <td>${c.jg}</td> --%>
                         <td>${c.zzs}</td>
-                        <td>${c.sbxlh}</td>
+                        <%-- <td>${c.sbxlh}</td> --%>
                         <td>
                             <c:if test="${c.isBx == 0}"><span class="label label-success radius">正常</span></c:if>
                             <c:if test="${c.isBx == 1}"><span class="label label-defaunt radius">维修中</span></c:if>
