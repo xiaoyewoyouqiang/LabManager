@@ -7,6 +7,7 @@ import com.longIt.model.Equipment;
 import com.longIt.model.Laboratory;
 import com.longIt.utils.Pager;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
@@ -48,5 +49,19 @@ public class EquipmentDaoImpl extends BaseDaoImpl<Equipment> implements Equipmen
         Query query = getSession().createQuery(sb.toString());
         query.setParameter("id", id);
         return (Equipment) query.uniqueResult();
+    }
+    
+    @Override
+    public void delete(int id) {
+     String sql = "set foreign_key_checks = 0"; 
+     SQLQuery query = getSession().createSQLQuery(sql);
+     query.executeUpdate();
+     sql = "delete from t_equipment where id=?";
+     query = getSession().createSQLQuery(sql); 
+     query.setParameter(0, id);
+     query.executeUpdate();
+     sql = "set foreign_key_checks = 1";
+     query = getSession().createSQLQuery(sql);
+     query.executeUpdate();
     }
 }

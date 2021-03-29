@@ -89,7 +89,7 @@
                             </td>
                         <td class="td-manage">
                                 <a title="添加设备图片"  onclick="cli(${c.id})" href="javascript:;"  class="btn btn-xs btn-info" ><i class="icon-edit bigger-120"></i></a>
-                            <a title="删除设备图片" href="javascript:;"  onclick="cli2(${c.id})" class="btn btn-xs btn-success" ><i class="icon-check bigger-120"></i></a>
+                            <a title="删除设备图片" href="javascript:;"  onclick="cli2(${c.id})" class="btn btn-xs btn-warning" ><i class="icon-trash bigger-120"></i></a>
                         </td>
                     </tr>
                           </c:forEach>
