@@ -38,14 +38,14 @@
             <form method="post" action="equipmentlog_list.do">
             <div class="search_style">
                 <ul class="search_content clearfix">
-                    <li><label class="l_f">实验室名称及型号</label><input name="equipment.xh" type="text" value="${equipmentLog.equipment.xh}" class="text_add"  style=" width:200px"/></li>
+                    <li><label class="l_f">实验室名称及型号</label><input name="equipment.name" type="text" value="${equipmentLog.equipment.name}" class="text_add"  style=" width:200px"/></li>
                     <li><label class="l_f">借用人</label><input name="user.name" type="text" value="${equipmentLog.user.name}" class="text_add"  style=" width:200px"/></li>
                     <li style="width:90px;"><button type="submit" class="btn_search"><i class="icon-search"></i>查询</button></li>
                 </ul>
             </div>
                 </form>
             <form  method="post" action="equipmentlog_export.do">
-                <input name="equipment.xh" type="hidden" value="${equipmentLog.equipment.xh}" class="text_add"  style=" width:200px"/>
+                <input name="equipment.name" type="hidden" value="${equipmentLog.equipment.name}" class="text_add"  style=" width:200px"/>
                 <input name="user.name" type="hidden" value="${equipmentLog.user.name}" class="text_add"  style=" width:200px"/>
                 <!-- <div class="border clearfix">
        <span class="l_f">
@@ -57,7 +57,7 @@
                 <table class="table table-striped table-bordered table-hover" id="sample-table">
                     <thead>
                     <tr>
-                        <th width="200">实验室名称及型号</th>
+                        <th width="200">实验室设备名称</th>
                         <th width="120">借用人</th>
                         <th width="120">借用时间</th>
                         <th width="120">归还人</th>
@@ -68,11 +68,11 @@
                     <tbody>
                       <c:forEach items="${pagers.datas}" var="c" varStatus="l">
                         <tr>
-                        <%-- <td>${c.equipment.xh}</td> --%>
+                       	<td>${c.equipment.name}</td> 
                         <td>${c.user.name}</td>
                         <td>${c.time}</td>
                         <td>${c.qx.name}</td>
-                            <td>${c.endTime}</td>
+                        <td>${c.endTime}</td>
 
                         </tr>
                           </c:forEach>
