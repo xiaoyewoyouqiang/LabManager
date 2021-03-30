@@ -22,9 +22,9 @@ public class EquipmentDaoImpl extends BaseDaoImpl<Equipment> implements Equipmen
         StringBuffer sb = new StringBuffer();
         sb.append("from Equipment where isDelete = 0");
         if (bean != null) {
-            if (bean.getXh() != null && !"".equals(bean.getXh())) {
+            if (bean.getName() != null && !"".equals(bean.getName())) {
                 sb.append(" and xh like :xh");
-                alias.put("xh", "%" + bean.getXh().trim() + "%");
+                alias.put("xh", "%" + bean.getName().trim() + "%");
             }
             if (bean.getJg() != null && !"".equals(bean.getJg())) {
                 sb.append(" and jg = :jg");

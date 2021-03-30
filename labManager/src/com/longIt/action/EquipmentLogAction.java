@@ -93,7 +93,7 @@ public class EquipmentLogAction extends ActionSupport implements ModelDriven<Equ
             // 创建一行
             Row row = sheet.createRow(i + 1);
             Cell id = row.createCell(0);
-            id.setCellValue(list.get(i).getEquipment().getXh().toString());
+            id.setCellValue(list.get(i).getEquipment().getName().toString());
             Cell zzs = row.createCell(1);
             zzs.setCellValue(list.get(i).getUser().getRealName().toString());
             Cell xh = row.createCell(2);

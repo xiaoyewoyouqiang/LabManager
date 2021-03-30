@@ -59,7 +59,7 @@ CREATE TABLE `t_equipment` (
   `jg` double DEFAULT NULL,
   `sbxlh` varchar(255) DEFAULT NULL,
   `time` datetime DEFAULT NULL,
-  `xh` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `zzs` varchar(255) DEFAULT NULL,
   `Laboratory_id` int(11) DEFAULT NULL,
   `fwTime` datetime DEFAULT NULL,
@@ -71,16 +71,18 @@ CREATE TABLE `t_equipment` (
   `JyUser_id` int(11) DEFAULT NULL,
   `isJy` int(11) NOT NULL DEFAULT '0',
   `isSh` int(11) NOT NULL DEFAULT '0',
+  `xh` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `FK_4gbru41steogqjjxhx0d8nnci` (`Laboratory_id`) USING BTREE,
   KEY `FK_hklhbo0lr2su1yo1w1ott8d2s` (`JyUser_id`) USING BTREE,
   CONSTRAINT `FK_4gbru41steogqjjxhx0d8nnci` FOREIGN KEY (`Laboratory_id`) REFERENCES `t_laboratory` (`id`),
   CONSTRAINT `FK_hklhbo0lr2su1yo1w1ott8d2s` FOREIGN KEY (`JyUser_id`) REFERENCES `t_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 /*Data for the table `t_equipment` */
 
-insert  into `t_equipment`(`id`,`bz`,`isBx`,`isDelete`,`state`,`jg`,`sbxlh`,`time`,`xh`,`zzs`,`Laboratory_id`,`fwTime`,`ht`,`isFw`,`photo`,`bxLogid`,`jyId`,`JyUser_id`,`isJy`,`isSh`) values (25,NULL,0,0,0,NULL,NULL,NULL,'机器人','华南师范大学',36,NULL,NULL,0,'\\upload\\f1ab0e20904311eb2ca2e7bb3989a29b机器人.jpg',NULL,NULL,NULL,0,0),(26,NULL,0,0,0,NULL,NULL,NULL,'FPV VR Flying Experience','华南师范大学南海校区',36,NULL,NULL,0,'\\upload\\b2af9780904411eb2ca2e7bb3989a29bvr.jpg',NULL,NULL,NULL,0,0),(27,NULL,0,0,0,NULL,'20',NULL,'机器人小车','华南师范大学南海校区',36,NULL,NULL,0,'\\upload\\cee2ad70904411eb2ca2e7bb3989a29b机器人小车.jpg',NULL,NULL,NULL,0,0),(28,NULL,0,0,0,NULL,NULL,NULL,'无人机','华南师范大学南海校区',36,NULL,NULL,0,'\\upload\\01295040904511eb2ca2e7bb3989a29b无人机.jpg',NULL,NULL,NULL,0,0),(29,NULL,0,0,0,NULL,NULL,NULL,'扫地机器人','华南师范大学南海校区',36,NULL,NULL,0,'\\upload\\f193ff80904a11eb2ca2e7bb3989a29b扫地机器人.jpg',NULL,NULL,NULL,0,0),(30,NULL,0,0,0,NULL,NULL,NULL,'移动平台','华南师范大学南海校区',36,NULL,NULL,0,'\\upload\\f4706b80904a11eb2ca2e7bb3989a29b移动平台.jpg',NULL,NULL,NULL,0,0);
+insert  into `t_equipment`(`id`,`bz`,`isBx`,`isDelete`,`state`,`jg`,`sbxlh`,`time`,`name`,`zzs`,`Laboratory_id`,`fwTime`,`ht`,`isFw`,`photo`,`bxLogid`,`jyId`,`JyUser_id`,`isJy`,`isSh`,`xh`,`address`) values (25,NULL,1,0,0,NULL,NULL,NULL,'机器人','华南师范大学',36,NULL,NULL,0,'\\upload\\f1ab0e20904311eb2ca2e7bb3989a29b机器人.jpg',21,NULL,NULL,0,0,NULL,NULL),(26,NULL,0,0,0,0,'',NULL,'FPV VR Flying Experience','华南师范大学南海校区',36,NULL,NULL,0,'\\upload\\b2af9780904411eb2ca2e7bb3989a29bvr.jpg',NULL,NULL,NULL,0,0,NULL,NULL),(27,NULL,0,0,0,NULL,'20',NULL,'机器人小车','华南师范大学南海校区',36,NULL,NULL,0,'\\upload\\cee2ad70904411eb2ca2e7bb3989a29b机器人小车.jpg',NULL,NULL,NULL,0,0,NULL,NULL),(28,NULL,0,0,0,NULL,NULL,NULL,'无人机','华南师范大学南海校区',36,NULL,NULL,0,'\\upload\\01295040904511eb2ca2e7bb3989a29b无人机.jpg',NULL,NULL,NULL,0,0,NULL,NULL),(29,NULL,0,0,0,NULL,NULL,NULL,'扫地机器人','华南师范大学南海校区',36,NULL,NULL,0,'\\upload\\f193ff80904a11eb2ca2e7bb3989a29b扫地机器人.jpg',NULL,NULL,NULL,0,0,NULL,NULL),(30,NULL,0,0,0,NULL,NULL,NULL,'移动平台','华南师范大学南海校区',36,NULL,NULL,0,'\\upload\\f4706b80904a11eb2ca2e7bb3989a29b移动平台.jpg',NULL,NULL,NULL,0,0,NULL,NULL);
 
 /*Table structure for table `t_equipmentlog` */
 
@@ -105,7 +107,7 @@ CREATE TABLE `t_equipmentlog` (
   CONSTRAINT `FK_a4m6nesgv6t398u3r2dd2o0w0` FOREIGN KEY (`qx_id`) REFERENCES `t_user` (`id`),
   CONSTRAINT `FK_aj076up5mm5gyl3q97bl2if78` FOREIGN KEY (`Equipment_id`) REFERENCES `t_equipment` (`id`),
   CONSTRAINT `FK_lmr7ywifxyrrkc3xj24hm8l6f` FOREIGN KEY (`user_id`) REFERENCES `t_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 /*Data for the table `t_equipmentlog` */
 
@@ -296,14 +298,15 @@ CREATE TABLE `t_repairlog` (
   `title` varchar(255) DEFAULT NULL,
   `wz` varchar(255) DEFAULT NULL,
   `Equipment_id` int(11) DEFAULT NULL,
+  `number` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `FK_awqus26wjn9jwoqdgkpqascpt` (`Equipment_id`) USING BTREE,
   CONSTRAINT `FK_awqus26wjn9jwoqdgkpqascpt` FOREIGN KEY (`Equipment_id`) REFERENCES `t_equipment` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 /*Data for the table `t_repairlog` */
 
-insert  into `t_repairlog`(`id`,`bxTime`,`bz`,`endTime`,`isDelete`,`title`,`wz`,`Equipment_id`) values (9,'2016-11-19 15:48:36','实验室管理测试','2019-03-14 15:23:32',0,'实验室管理测试','实验室管理测试',5),(10,'2019-04-17 14:52:54','没有原因','2019-03-14 15:23:32',0,'仪器出了故障','实验室三楼',5),(11,'2019-04-17 14:53:35','学生误操作','2019-04-19 10:45:59',0,'设备坏了','实验室三楼',8);
+insert  into `t_repairlog`(`id`,`bxTime`,`bz`,`endTime`,`isDelete`,`title`,`wz`,`Equipment_id`,`number`) values (14,'2019-11-21 19:11:39','内存故障','2021-03-29 19:12:06',0,'黄武秋','A室',31,'44'),(15,'2019-12-01 19:12:43','系统崩溃','2021-03-29 19:12:55',0,'黄武秋','B室',32,'06'),(16,'2019-12-01 19:14:58','硬盘坏了','2021-03-29 19:15:07',0,'黄武秋','C室',33,'44'),(17,'2019-12-16 19:15:26','内存故障','2021-03-29 19:15:31',0,'黄武秋','A室',31,'12'),(18,'2019-12-18 19:16:16','不通电','2021-03-29 19:16:20',0,'黄武秋','A室',31,'04'),(19,'2019-12-18 19:16:54','内存故障','2021-03-29 19:17:32',0,'黄武秋','A室',31,'30'),(21,'2021-03-30 11:26:11','test',NULL,0,'黄武秋','D室',NULL,'200');
 
 /*Table structure for table `t_role` */
 

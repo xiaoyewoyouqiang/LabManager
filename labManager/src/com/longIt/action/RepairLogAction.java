@@ -116,14 +116,16 @@ public class RepairLogAction extends ActionSupport implements ModelDriven<Repair
         // 追加Sheet
         Sheet sheet = wb.createSheet("Sheet");
         // 总列数
-        Integer CountColumnNum = 6;
+        Integer CountColumnNum = 7;
         Cell[] firstCell = new Cell[CountColumnNum];
         String[] firstCellNames = new String[CountColumnNum];
-        firstCellNames[0] = "实验室名称及型号";
-        firstCellNames[1] = "报修实验室名称及型号";
-        firstCellNames[2] = "报修开始时间";
-        firstCellNames[3] = "报修结束时间";
-        firstCellNames[4] = "设备位置";
+        firstCellNames[0] = "维修时间";
+        firstCellNames[1] = "实验室名称";
+        firstCellNames[2] = "机器编号";
+        firstCellNames[3] = "检查情况";
+        firstCellNames[4] = "跟进（维修）结果";
+        firstCellNames[5] = "维修人";
+        firstCellNames[6] = "备注";
         // 插入行
         Row firstRow = sheet.createRow(0);
         for (int j = 0; j < CountColumnNum; j++) {
@@ -134,18 +136,37 @@ public class RepairLogAction extends ActionSupport implements ModelDriven<Repair
         for (int i = 0; i < list.size(); i++) {
             // 创建一行
             Row row = sheet.createRow(i + 1);
-            Cell id = row.createCell(0);
-            id.setCellValue(list.get(i).getEquipment().getXh().toString());
+//            "维修时间"
+            Cell bx = row.createCell(0);
+            bx.setCellValue(list.get(i).getBxTime().toString());
+            
+//            "实验室名称"(位置）
+            Cell wz = row.createCell(1);
+            wz.setCellValue(list.get(i).getWz().toString());
+            
+//           "机器编号"
+            Cell number = row.createCell(2);
+            number.setCellValue(list.get(i).getNumber());
+            
+//            "检查情况"
+            Cell bz = row.createCell(3);
+            bz.setCellValue(list.get(i).getBz().toString());
+            
+//            "跟进（维修）结果"
+            Cell result = row.createCell(4);
+            if(list.get(i).getEndTime()!=null) {
+            	result.setCellValue("已解决");
+            }else {
+            	result.setCellValue("未解决");
+            }
+            
+//            "维修人"
+            Cell title = row.createCell(5);
+            title.setCellValue(list.get(i).getTitle().toString());
+//            备注
+            Cell remarks = row.createCell(6);
+            remarks.setCellValue("");
 
-            Cell zzs = row.createCell(1);
-            zzs.setCellValue(list.get(i).getTitle().toString());
-
-            Cell xh = row.createCell(2);
-            xh.setCellValue(list.get(i).getBxTime().toString());
-            Cell gh = row.createCell(3);
-            gh.setCellValue(list.get(i).getEndTime().toString());
-            Cell t = row.createCell(4);
-            t.setCellValue(list.get(i).getWz().toString());
         }
         // 创建文件输出流，准备输出电子表格
         HttpServletResponse response = ServletActionContext.getResponse();

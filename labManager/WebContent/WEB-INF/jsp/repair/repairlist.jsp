@@ -62,7 +62,7 @@
                     <tbody>
                       <c:forEach items="${pagers3.datas}" var="c" varStatus="l">
                         <tr>
-                        <td>${c.xh}</td>
+                        <td>${c.name}</td>
                         <%-- <td>${c.jg}</td> --%>
                         <td>${c.zzs}</td>
                         <%-- <td>${c.sbxlh}</td> --%>
@@ -140,24 +140,25 @@
             <li>
                 <label class="label_name"style="width: 130px">报修原因：</label>
                 <span class="add_name">
-            <input name="repairLog.bz" type="text" id="报修原因" class="text_add"/>
-        </span>
+            	<input name="repairLog.bz" type="text" id="报修原因" class="text_add"/>
+        		</span>
             </li>
             <li class="adderss"><label class="label_name" style="width: 130px">设备位置：</label>
                 <span class="add_name">
                 <input name="repairLog.wz" type="text" id="设备位置" class="text_add" style=" width:350px"/>
-            </span>
+            	</span>
             </li>
             <li>
                 <label class="label_name"style="width: 130px">设备编号：</label>
                 <span class="add_name">
-                <select name="repairLog.equipment.id" style="width: 165px; margin-left: 10px" class="text_add">
+                	<input name="repairLog.number" type="text" id="设备编号" class="text_add" style=" width:200px"/>
+                <%-- <select name="repairLog.equipment.id" style="width: 165px; margin-left: 10px" class="text_add">
                     <option value="" id="实验室名称及型号">请选择</option>
                     <c:forEach items="${pagers3.datas}" var="b" varStatus="l">
                         <option value="${b.id}">${b.xh}</option>
                     </c:forEach>
-                </select>
-        </span>
+                </select> --%>
+        		</span>
             </li>
         </ul>
     </div>

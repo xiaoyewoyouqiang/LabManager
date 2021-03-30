@@ -62,7 +62,7 @@
                     <thead>
                     <tr>
                         <th>维修时间</th>
-                        <th>实验室名称</th>
+                        <th>实验室名称</th>  
                         <th>机器编号</th>
                         <th>检查情况</th>
                         <th width="300">跟进（维修）结果</th>
@@ -73,13 +73,14 @@
                     <tbody>
                     <c:forEach items="${pagers.datas}" var="c" varStatus="status">
                         <tr>
-                        	<td>${c.bxTime}</td>
-                            <%-- <td>${c.equipment.xh}</td> --%>
-                            <td>${c.title}</td>
-                            <td>${c.endTime}</td>
-                            <td>${c.wz}</td>
+                        	<td><fmt:formatDate value="${c.bxTime}" pattern="yyyy-MM-dd" /></td>
+                            <td>${c.wz}</td>  
+                            <td>${c.number}</td>
+                            <td>${c.bz}</td>
+                            <td><c:if test="${c.endTime != null }">已解决</c:if>
+                            <c:if test="${c.endTime == null }">维修中</c:if></td>
+                           <td>${c.title}</td>
                            <td></td>
-                           <td>无</td>
                         </tr>
                     </c:forEach>
                     </tbody>

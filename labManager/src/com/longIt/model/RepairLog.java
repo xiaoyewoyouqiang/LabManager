@@ -20,9 +20,11 @@ public class RepairLog implements Serializable {
     private Date bxTime;
     //结束时间
     private Date endTime;
-    //设备位置
-    private String wz;
+    //机器编号
+    private String number;
     private Equipment equipment;
+    //实验室名称(位置）
+	private String wz;
     @Id
     @GeneratedValue
     public Integer getId() {
@@ -90,4 +92,12 @@ public class RepairLog implements Serializable {
     public void setWz(String wz) {
         this.wz = wz;
     }
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
 }

@@ -9,9 +9,27 @@ import java.util.Date;
 public class Equipment implements Serializable {
 
     private Integer id;
-    //实验室名称及型号
-    private String xh;
-    //设备价格
+    //实验室设备名称
+    private String name;
+    //设备的实验室名称
+    private String address;
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	//设备价格
     private Double jg;
     //设备制造商
     private String zzs;
@@ -56,13 +74,6 @@ public class Equipment implements Serializable {
         this.id = id;
     }
 
-    public String getXh() {
-        return xh;
-    }
-
-    public void setXh(String xh) {
-        this.xh = xh;
-    }
 
     public Double getJg() {
         return jg;

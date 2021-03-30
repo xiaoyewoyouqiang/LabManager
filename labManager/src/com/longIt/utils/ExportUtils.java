@@ -46,7 +46,7 @@ public class ExportUtils {
             // 创建一行
             Row row = sheet.createRow(i + 1);
             Cell id = row.createCell(0);
-            id.setCellValue(list.get(i).getXh().toString());
+            id.setCellValue(list.get(i).getName().toString());
             bd = new BigDecimal(list.get(i).getJg().toString());
             bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
             Cell by = row.createCell(1);
@@ -54,7 +54,7 @@ public class ExportUtils {
             Cell zzs = row.createCell(2);
             zzs.setCellValue(list.get(i).getZzs().toString());
             Cell xh = row.createCell(3);
-            xh.setCellValue(list.get(i).getXh().toString());
+            xh.setCellValue(list.get(i).getName().toString());
             Cell sj = row.createCell(4);
             sj.setCellValue(list.get(i).getFwTime().toString());
         }

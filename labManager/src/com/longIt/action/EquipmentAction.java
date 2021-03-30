@@ -443,7 +443,7 @@ public class EquipmentAction extends ActionSupport implements ModelDriven<Equipm
             // 创建一行
             Row row = sheet.createRow(i + 1);
             Cell id = row.createCell(0);
-            id.setCellValue(list.get(i).getXh().toString());
+            id.setCellValue(list.get(i).getName().toString());
             bd = new BigDecimal(list.get(i).getJg().toString());
             bd = bd.setScale(2, BigDecimal.ROUND_HALF_UP);
             Cell by = row.createCell(1);

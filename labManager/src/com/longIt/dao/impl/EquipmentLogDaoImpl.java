@@ -29,9 +29,9 @@ public class EquipmentLogDaoImpl extends BaseDaoImpl<EquipmentLog> implements Eq
                 sb.append(" and qx.name like :names");
                 alias.put("names", "%" + bean.getQx().getName().trim() + "%");
             }
-            if (bean.getEquipment() != null && bean.getEquipment().getXh() != null && !"".equals(bean.getEquipment().getXh())) {
+            if (bean.getEquipment() != null && bean.getEquipment().getName() != null && !"".equals(bean.getEquipment().getName())) {
                 sb.append(" and equipment.xh like :xh");
-                alias.put("xh", "%" + bean.getEquipment().getXh().trim() + "%");
+                alias.put("xh", "%" + bean.getEquipment().getName().trim() + "%");
             }
         }
         return findByAlias(sb.toString(), alias);

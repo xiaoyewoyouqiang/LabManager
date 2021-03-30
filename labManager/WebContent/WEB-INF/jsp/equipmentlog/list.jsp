@@ -47,11 +47,11 @@
             <form  method="post" action="equipmentlog_export.do">
                 <input name="equipment.xh" type="hidden" value="${equipmentLog.equipment.xh}" class="text_add"  style=" width:200px"/>
                 <input name="user.name" type="hidden" value="${equipmentLog.user.name}" class="text_add"  style=" width:200px"/>
-                <div class="border clearfix">
+                <!-- <div class="border clearfix">
        <span class="l_f">
         <button type="submit" id="member_add" class="btn btn-warning"><i class="icon-plus"></i>导出表格</button>
        </span>
-                </div>
+                </div> -->
             </form>
             <div class="table_menu_list">
                 <table class="table table-striped table-bordered table-hover" id="sample-table">
