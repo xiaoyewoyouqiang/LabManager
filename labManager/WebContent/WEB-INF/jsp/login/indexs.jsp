@@ -436,7 +436,7 @@
 										</ul>
 									</li>
 								</c:if>
-								<c:if test="${role != 'xs'}">
+								<%-- <c:if test="${role != 'xs'}"> --%>
 									<li><a href="#" class="dropdown-toggle"><i class="icon-desktop">
 												<?xml version="1.0" standalone="no"?>
 												<!DOCTYPE svg
@@ -472,20 +472,20 @@
 														<i class="icon-double-angle-right"></i>实验室大纲
 													</a></li> -->
 											</c:if>
-
+											
 											<li class="home"><a href="javascript:void(0)" name="laboratory_list2.do"
 													title="实验室列表" class="iframeurl">
 													<i class="icon-double-angle-right"></i>实验室预约
 												</a></li>
-
+											
 											<li class="home"><a href="javascript:void(0)" name="laboratory_listcopy.do"
 													title="规章制度" class="iframeurl">
 													<i class="icon-double-angle-right"></i>规章制度
 												</a></li>
 										</ul>
 									</li>
-								</c:if>
-								<c:if test="${role == 'admin'||role == 'xs'}">
+								<%-- </c:if> --%>
+								<c:if test="${role == 'admin'}">
 									<li><a href="#" class="dropdown-toggle"><i class="icon-cogs">
 												<?xml version="1.0" standalone="no"?>
 												<!DOCTYPE svg
