@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/common/taglibs.jsp" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD nameTML 1.0 Transitional//EN" "http://www.w3.org/TR/nametml1/DTD/nametml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/nametml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="${ctx}/resource/assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -46,7 +46,7 @@
             <form method="post" action="equipment_dataList2.do">
             <div class="search_style">
                 <ul class="search_content clearfix">
-                    <li><label class="l_f">实验室名称及型号</label><input name="xh" type="text" value="${bean.xh}" class="text_add"  style=" width:200px"/></li>
+                    <li><label class="l_f">实验室名称及型号</label><input name="name" type="text" value="${bean.name}" class="text_add"  style=" width:200px"/></li>
                     <%-- <li><label class="l_f">设备制造商</label><input name="zzs" type="text" value="${bean.zzs}" class="text_add"  style=" width:200px"/></li> --%>
                     <!-- <li><label class="l_f">设备序列号</label><input name="sbxlh" type="text" value="${bean.sbxlh}" class="text_add"  style=" width:200px"/></li> -->
                     <li style="width:90px;"><button type="submit" class="btn_search"><i class="icon-search"></i>查询</button></li>
@@ -68,7 +68,7 @@
                     <tbody>
                       <c:forEach items="${pagers.datas}" var="c" varStatus="status">
                         <tr>
-                        <td>${c.xh}</td>
+                        <td>${c.name}</td>
                         <%-- <td>${c.jg}</td>
                         <td>${c.zzs}</td>
                         <td>${c.sbxlh}</td> --%>
@@ -101,7 +101,7 @@
     <div class="pagelist">
         <pg:pager url="${ctx}/equipment_dataList2.do" maxIndexPages="5" items="${pagers.total}" maxPageItems="15"
                   export="curPage=pageNumber">
-            <pg:param name="xh" value="${bean.xh}"/>
+            <pg:param name="name" value="${bean.name}"/>
             <pg:param name="zzs" value="${bean.zzs}"/>
             <pg:param name="sbxlh" value="${bean.sbxlh}"/>
             <pg:last>

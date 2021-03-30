@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/common/taglibs.jsp"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD nameTML 1.0 Transitional//EN" "http://www.w3.org/TR/nametml1/DTD/nametml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/nametml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="${ctx}/resource/assets/css/bootstrap.min.css"
@@ -44,8 +44,8 @@
 				<form method="post" action="equipment_list.do">
 					<div class="search_style">
 						<ul class="search_content clearfix">
-							<li><label class="l_f">实验室名称及型号</label><input name="xh"
-								type="text" value="${bean.xh}" class="text_add"
+							<li><label class="l_f">实验室名称及型号</label><input name="name"
+								type="text" value="${bean.name}" class="text_add"
 								style="width: 200px" /></li>
 							<%-- <li><label class="l_f">设备制造商</label><input name="zzs" type="text" value="${bean.zzs}" class="text_add"  style=" width:200px"/></li> --%>
 							<!-- <li><label class="l_f">设备序列号</label><input name="sbxlh" type="text" value="${bean.sbxlh}" class="text_add"  style=" width:200px"/></li> -->
@@ -76,7 +76,7 @@
 						<tbody>
 							<c:forEach items="${pagers.datas}" var="c" varStatus="l">
 								<tr>
-									<td>${c.xh}</td>
+									<td>${c.name}</td>
 									<td>${c.zzs}</td>
 									<td><c:if test="${c.state == 0}">
 											<span class="label label-success radius">可借用</span>
@@ -106,7 +106,7 @@
 			<pg:pager url="${ctx}/equipment_list.do" maxIndexPages="5"
 				items="${pagers.total}" maxPageItems="15"
 				export="curPage=pageNumber">
-				<pg:param name="xh" value="${bean.xh}" />
+				<pg:param name="name" value="${bean.name}" />
 				<pg:param name="zzs" value="${bean.zzs}" />
 				<pg:param name="sbxlh" value="${bean.sbxlh}" />
 				<pg:last>
@@ -159,7 +159,7 @@
 				</span></li> -->
 			</ul>
 			<li><label class="label_name" style="width: 130px">实验设备名称：</label>
-				<span class="add_name"> <input value="" name="xh" type="text"
+				<span class="add_name"> <input value="" name="name" type="text"
 					id="实验设备名称" class="text_add" />
 			</span></li>
 			<!-- <li><label class="label_name" style="width: 130px">设备价格：</label>
