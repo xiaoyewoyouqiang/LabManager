@@ -105,7 +105,9 @@
                                 <c:if test="${c.state == 0}">
                           <a onClick="yy(${c.id})"  href="javascript:;" title="预约"  class="btn btn-xs btn-success">预约</a>
                                 </c:if>
+                                <c:if test="${c.state == 1}">
                                     <a onClick="qx(${c.id})"  href="javascript:;" title="取消预约"  class="btn btn-xs btn-success">取消预约</a>
+                                </c:if>
                         </td>
                         <c:if test="${user.role.id == 1}">
 	                        <td>

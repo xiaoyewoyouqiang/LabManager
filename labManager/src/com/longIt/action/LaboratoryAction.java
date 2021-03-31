@@ -147,7 +147,7 @@ public class LaboratoryAction extends ActionSupport implements ModelDriven<Labor
      * @return
      */
     public void yy() throws IOException {
-        laboratory.setState(2);;
+        laboratory.setState(2);
         laboratory.setUser(UserUtils.getUser());
         LaboratoryLog laboratoryLog = new LaboratoryLog();
         laboratoryLog.setState(2);
@@ -171,8 +171,7 @@ public class LaboratoryAction extends ActionSupport implements ModelDriven<Labor
         Laboratory laboratory1 = laboratoryService.findById(laboratory.getId());
         LaboratoryLog laboratoryLog = laboratoryLogService.findById(laboratory1.getLaboratoryLogId());
         if (laboratoryLog.getUser().getId() == UserUtils.getUser().getId()){
-            laboratory1.setState(3);;
-            laboratory1.setUser(null);
+            laboratory1.setState(3);
             laboratoryService.update(laboratory1);
             laboratoryLog.setState(3);
             laboratoryLog.setEndTime(new Date());
@@ -220,23 +219,24 @@ public class LaboratoryAction extends ActionSupport implements ModelDriven<Labor
      * @return
      */
     public void updateSh() throws IOException {
-    	laboratory.setUser(UserUtils.getUser());
+    	Laboratory laboratory1 = laboratoryService.findById(laboratory.getId());
         LaboratoryLog laboratoryLog = new LaboratoryLog();
     	Integer state = laboratory.getState();//无法获取，要从list2.jsp中传入状态值
     	if(state == 2) {
-    		laboratory.setState(1);
+    		laboratory1.setState(1);
     		laboratoryLog.setState(1);
     	}
     	if(state ==3) {
-    		laboratory.setState(0);
+    		laboratory1.setState(0);
+    		laboratory1.setUser(null);
     		laboratoryLog.setState(0);
     	}
-        laboratoryLog.setLaboratory(laboratory);
+        laboratoryLog.setLaboratory(laboratory1);
         laboratoryLog.setTime(new Date());
         laboratoryLog.setUser(UserUtils.getUser());
         laboratoryLogService.save(laboratoryLog);
         laboratory.setLaboratoryLogId(laboratoryLog.getId());
-        laboratoryService.updates(laboratory);
+        laboratoryService.updates(laboratory1);
         map.put("flag", true);
         map.put("url", "laboratory_list2.do");
         JsonUtils.toJson(map);
