@@ -91,7 +91,7 @@
     top: 8px;" src="${pageContext.request.contextPath}/resource/images/6c187a00-624e-40fa-8bfd-d5315e8d239e.png" />
 				<input  type="password" name="user.pass" placeholder="输入密码" style="height:30px;width: 270px; padding-left: 20px;" placeholder="请输入密码..." id="密码"/>
 			</div>
-			<a style="color: #fff; float: right; padding-right: 8px;color: #2ec0f6" href="javascript:add()">忘记密码?</a>
+			<a style="color: #fff; float: right; padding-right: 8px;color: #2ec0f6" href="javascript:add()">注册账号</a>
 			<button style="margin: 28px auto 0;   display: block;" type="button" id="login_btn">登<span style="width:20px;"></span>录</button>
 			<button style="background-color: #880000!important;    display: block; margin: 10px auto 0;" type="button" id="login_btn">统一身份验证</button>
 			<div style="background-color: #f2dede; color: #a94442; margin-top: 10px; padding: 10px;">

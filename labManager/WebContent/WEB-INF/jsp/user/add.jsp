@@ -140,7 +140,7 @@
                 async: false,
                 success: function(data){
                     if (data.flag){
-                        layer.msg('注册成功', {
+                        layer.msg('注册成功，等待管理员审核！', {
                             icon: 1,
                             time: 2000 //2秒关闭（如果不配置，默认是3秒）
                         }, function(){

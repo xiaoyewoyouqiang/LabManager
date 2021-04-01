@@ -472,11 +472,11 @@
 														<i class="icon-double-angle-right"></i>实验室大纲
 													</a></li> -->
 											</c:if>
-											
+											<!-- 
 											<li class="home"><a href="javascript:void(0)" name="laboratory_list2.do"
 													title="实验室列表" class="iframeurl">
 													<i class="icon-double-angle-right"></i>实验室预约
-												</a></li>
+												</a></li> -->
 											
 											<li class="home"><a href="javascript:void(0)" name="laboratory_listcopy.do"
 													title="规章制度" class="iframeurl">
@@ -517,12 +517,12 @@
 											<li class="home"><a href="javascript:void(0)" name="equipment_list.do"
 													title="实验设备详情管理" class="iframeurl"><i
 														class="icon-double-angle-right"></i>实验设备详情管理</a></li>
-											</c:if><c:if test="${role == 'xs'}">
+											</c:if><%-- <c:if test="${role == 'xs'}">
 												<li class="home"><a href="javascript:void(0)"
 														name="laboratory_list2copy.do" title="实验室列表" class="iframeurl">
 														<i class="icon-double-angle-right"></i>实验室预约
 													</a></li>
-											</c:if>
+											</c:if> --%>
 											<c:if test="${role == 'admin'}">
 												<li class="home"><a href="javascript:void(0)"
 														name="equipment_dataList2.do" title="实验设备的图片管理"
@@ -634,11 +634,11 @@
 											</i><span class="menu-text">系统报表统计中心 </span><b
 												class="arrow icon-angle-down"></b></a>
 										<ul class="submenu">
-											<li class="home"><a href="javascript:void(0)" name="laboratorylog_list.do"
+											<!-- <li class="home"><a href="javascript:void(0)" name="laboratorylog_list.do"
 													title="实验室预约人统计表" class="iframeurl"> <i
 														class="icon-double-angle-right"></i>实验室预约人统计表
 												</a>
-											</li>
+											</li> -->
 											<li class="home"><a href="javascript:void(0)" name="equipmentlog_list.do"
 													title="设备借用统计表" class="iframeurl"><i
 														class="icon-double-angle-right"></i>设备借用统计表</a></li>
@@ -649,10 +649,10 @@
 													title="用户统计报表" class="iframeurl"> <i
 														class="icon-double-angle-right"></i>用户统计报表
 												</a></li>
-											<li class="home"><a href="javascript:void(0)" name="laboratory_list2copy.do"
+											<!-- <li class="home"><a href="javascript:void(0)" name="laboratory_list2copy.do"
 													title="实验室预约情况统计表" class="iframeurl"> <i
 														class="icon-double-angle-right"></i>实验室预约情况统计表
-												</a></li>
+												</a></li> -->
 										</ul>
 									</li>
 								</c:if>
