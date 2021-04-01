@@ -44,7 +44,7 @@
 				<form method="post" action="equipment_list.do">
 					<div class="search_style">
 						<ul class="search_content clearfix">
-							<li><label class="l_f">实验室名称及型号</label><input name="name"
+							<li><label class="l_f">实验室设备名称</label><input name="name"
 								type="text" value="${bean.name}" class="text_add"
 								style="width: 200px" /></li>
 							<%-- <li><label class="l_f">设备制造商</label><input name="zzs" type="text" value="${bean.zzs}" class="text_add"  style=" width:200px"/></li> --%>
@@ -77,7 +77,7 @@
 							<c:forEach items="${pagers.datas}" var="c" varStatus="l">
 								<tr>
 									<td>${c.name}</td>
-									<td>${c.zzs}</td>
+									<td>${c.laboratory.name}</td>
 									<td><c:if test="${c.state == 0}">
 											<span class="label label-success radius">可借用</span>
 										</c:if> <c:if test="${c.state == 1}">
