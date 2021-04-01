@@ -644,7 +644,6 @@
 														class="icon-double-angle-right"></i>设备借用统计表</a></li>
 											<li class="home"><a href="javascript:void(0)" name="repair_list.do" title=""
 													class="iframeurl"><i class="icon-double-angle-right"></i>设备维修统计表</a>
-											</li>
 											<li class="home"><a href="javascript:void(0)" name="user_listcopy.do"
 													title="用户统计报表" class="iframeurl"> <i
 														class="icon-double-angle-right"></i>用户统计报表
